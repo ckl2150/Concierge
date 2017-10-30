@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/conradliu/Github/Concierge/ConciergeApp/ConciergeApp/ViewController2.swift">
+   </FileRef>
+   <FileRef
       location = "group:ConciergeApp.xcodeproj">
    </FileRef>
    <FileRef

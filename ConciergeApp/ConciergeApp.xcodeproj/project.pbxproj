@@ -17,6 +17,7 @@
 		B26AA0EA1FA22F1B00176D9C /* ConciergeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26AA0E91FA22F1B00176D9C /* ConciergeAppTests.swift */; };
 		B26AA0F51FA22F1B00176D9C /* ConciergeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26AA0F41FA22F1B00176D9C /* ConciergeAppUITests.swift */; };
 		B26AA1031FA231E700176D9C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B26AA1021FA231E700176D9C /* GoogleService-Info.plist */; };
+		EF5A8B701FA274130038F8A4 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A8B6F1FA274130038F8A4 /* ViewController2.swift */; };
 		F97C062E0756F14576DEA7D4 /* Pods_ConciergeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A32F09209DF020B65BE3EF7 /* Pods_ConciergeApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		B26AA0F61FA22F1C00176D9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B26AA1021FA231E700176D9C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C868DBCB3E3E105A4CEE4FE4 /* Pods-ConciergeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConciergeAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConciergeAppUITests/Pods-ConciergeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EF5A8B6F1FA274130038F8A4 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController2.swift; path = /Users/conradliu/Github/Concierge/ConciergeApp/ConciergeApp/ViewController2.swift; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			children = (
 				B26AA0D41FA22F1B00176D9C /* AppDelegate.swift */,
 				B26AA0D61FA22F1B00176D9C /* ViewController.swift */,
+				EF5A8B6F1FA274130038F8A4 /* ViewController2.swift */,
 				B26AA0D81FA22F1B00176D9C /* Main.storyboard */,
 				B26AA0DB1FA22F1B00176D9C /* Assets.xcassets */,
 				B26AA0DD1FA22F1B00176D9C /* LaunchScreen.storyboard */,
@@ -245,6 +248,7 @@
 				TargetAttributes = {
 					B26AA0D01FA22F1B00176D9C = {
 						CreatedOnToolsVersion = 9.0.1;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					B26AA0E41FA22F1B00176D9C = {
@@ -470,6 +474,7 @@
 			files = (
 				B26AA0D71FA22F1B00176D9C /* ViewController.swift in Sources */,
 				B26AA0D51FA22F1B00176D9C /* AppDelegate.swift in Sources */,
+				EF5A8B701FA274130038F8A4 /* ViewController2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,12 +641,14 @@
 			baseConfigurationReference = 094BC046CD5DC713A2FBAD32 /* Pods-ConciergeApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2WNM2MXGBM;
 				INFOPLIST_FILE = ConciergeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Concierge.ConciergeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -652,6 +659,7 @@
 			baseConfigurationReference = 716718A23A4215C1D4FEDD5F /* Pods-ConciergeApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2WNM2MXGBM;
 				INFOPLIST_FILE = ConciergeApp/Info.plist;

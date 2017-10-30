@@ -25,7 +25,7 @@ class ViewController: UIViewController {
                 Auth.auth().signIn(withEmail: emailText.text!, password: passwordText.text!, completion: { (user, error) in
                     if user != nil {
                         //success
-                        print("wooooo")
+                        self.performSegue(withIdentifier: "segue", sender: self)
                     }
                     else {
                         if let myError = error?.localizedDescription {
@@ -41,7 +41,7 @@ class ViewController: UIViewController {
                 //SignUp
                 Auth.auth().createUser(withEmail: emailText.text!, password: passwordText.text!, completion: { (user, error) in
                     if user != nil {
-                        
+                        // success
                     }
                     else {
                         if let myError = error?.localizedDescription {
