@@ -62,7 +62,7 @@
 		B26AA0F61FA22F1C00176D9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B26AA1021FA231E700176D9C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C868DBCB3E3E105A4CEE4FE4 /* Pods-ConciergeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConciergeAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConciergeAppUITests/Pods-ConciergeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
-		EF5A8B6F1FA274130038F8A4 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController2.swift; path = /Users/conradliu/Github/Concierge/ConciergeApp/ConciergeApp/ViewController2.swift; sourceTree = "<absolute>"; };
+		EF5A8B6F1FA274130038F8A4 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
