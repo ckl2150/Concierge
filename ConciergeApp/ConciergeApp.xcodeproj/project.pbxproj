@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		460D8439D01FFB1D9ABD68DF /* Pods_ConciergeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE747EB8F22253D50736B0B1 /* Pods_ConciergeAppUITests.framework */; };
 		97EDDC400CF9AEA3BB7DFAB2 /* Pods_ConciergeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39259406354190CAD8C563CD /* Pods_ConciergeAppTests.framework */; };
+		B20789841FB0DB7B009FE5C3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B20789831FB0DB7B009FE5C3 /* CoreLocation.framework */; };
 		B26AA0D51FA22F1B00176D9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26AA0D41FA22F1B00176D9C /* AppDelegate.swift */; };
 		B26AA0D71FA22F1B00176D9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26AA0D61FA22F1B00176D9C /* ViewController.swift */; };
 		B26AA0DA1FA22F1B00176D9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B26AA0D81FA22F1B00176D9C /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		716718A23A4215C1D4FEDD5F /* Pods-ConciergeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConciergeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConciergeApp/Pods-ConciergeApp.release.xcconfig"; sourceTree = "<group>"; };
 		8A32F09209DF020B65BE3EF7 /* Pods_ConciergeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConciergeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE747EB8F22253D50736B0B1 /* Pods_ConciergeAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConciergeAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B20789831FB0DB7B009FE5C3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B26AA0D11FA22F1B00176D9C /* ConciergeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConciergeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B26AA0D41FA22F1B00176D9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B26AA0D61FA22F1B00176D9C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B20789841FB0DB7B009FE5C3 /* CoreLocation.framework in Frameworks */,
 				F97C062E0756F14576DEA7D4 /* Pods_ConciergeApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +99,7 @@
 		07D7B24065C06B0FE0A5213C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B20789831FB0DB7B009FE5C3 /* CoreLocation.framework */,
 				8A32F09209DF020B65BE3EF7 /* Pods_ConciergeApp.framework */,
 				39259406354190CAD8C563CD /* Pods_ConciergeAppTests.framework */,
 				AE747EB8F22253D50736B0B1 /* Pods_ConciergeAppUITests.framework */,

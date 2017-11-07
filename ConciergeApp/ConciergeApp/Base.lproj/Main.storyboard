@@ -72,11 +72,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ta-Hj-Hm0">
-                                <rect key="frame" x="163" y="318" width="48" height="30"/>
+                                <rect key="frame" x="311" y="10" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Logout"/>
                                 <connections>
                                     <action selector="logoutAction:" destination="G9D-dH-8BI" eventType="touchUpInside" id="zsQ-dU-V78"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0PH-hj-3eg">
+                                <rect key="frame" x="110" y="135" width="155" height="124"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="G9D-dH-8BI" id="q1D-9z-jID"/>
+                                    <outlet property="delegate" destination="G9D-dH-8BI" id="7pO-sH-qgn"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZrF-nv-Bsk">
+                                <rect key="frame" x="110" y="114" width="155" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7b-k9-DYi">
+                                <rect key="frame" x="172" y="267" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Go"/>
+                                <connections>
+                                    <action selector="onGoGet:" destination="G9D-dH-8BI" eventType="touchUpInside" id="ZkQ-wQ-GBA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -84,12 +107,14 @@
                         <viewLayoutGuide key="safeArea" id="R3v-kN-x0Z"/>
                     </view>
                     <connections>
+                        <outlet property="poiDropdown" destination="0PH-hj-3eg" id="bwu-l6-uzr"/>
+                        <outlet property="poiLabel" destination="ZrF-nv-Bsk" id="KWQ-Ki-TuO"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="segue2" id="vDh-LV-Qnf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mui-sT-cTm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="575" y="134"/>
+            <point key="canvasLocation" x="573.60000000000002" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
