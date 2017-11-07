@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>971709805420-2f63ommi13hd8288d5hmmb74fifbpjc7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.971709805420-2f63ommi13hd8288d5hmmb74fifbpjc7</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBFNyvoKr20kjV_iHzPxvVagA2X_0Oa1jA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>971709805420</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.Concierge.ConciergeApp</string>
+	<key>PROJECT_ID</key>
+	<string>concierge-283c7</string>
+	<key>STORAGE_BUCKET</key>
+	<string>concierge-283c7.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:971709805420:ios:9829277c9dde657a</string>
+	<key>DATABASE_URL</key>
+	<string>https://concierge-283c7.firebaseio.com</string>
+</dict>
+</plist>
