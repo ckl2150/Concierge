@@ -45,8 +45,9 @@ class ViewController: UIViewController {
                     let email: String = self.emailText.text!
                     if user != nil {
                         self.ref.child("user").setValue(email)
+                        self.ref.child(email).setValue("hello?")
 //                        ref!.child("user/\(self.emailText.text)/email").setValue([self.emailText.text])
-                        ref.child("user\(email)").setValue(self.passwordText.text)
+//                        ref.child("user\(email)").setValue(self.passwordText.text)
                         // success
                     }
                     else {
