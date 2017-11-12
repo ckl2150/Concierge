@@ -1,7 +1,6 @@
 Concierge is a an everyday travelling companion in the form of an iOS app. It runs in the background of a user's phone and notifies them of interesting locations or points of interest nearby via a push notification.
 
-**NOTE**
-The most up to date code is in the branch dev-James
+**NOTE FOR CODE REVIEWING**: The most up to date code is currently in the branch dev-James. To view the code for the app click the folder ConciergeApp and then once again the folder ConciergeApp. There you should see all the files associated with the iOS app. The specific files to look at ViewController.swift, ViewController2.swift, and TableViewController.swift.
 
 In order to build the project, you must have the latest version of Xcode installed on your computer (may also require upgrading to Sierra if you have an outdated macOS version).
 
