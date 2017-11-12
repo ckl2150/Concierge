@@ -12,6 +12,7 @@ import FirebaseAuth
 
 class TableViewController: UITableViewController,CLLocationManagerDelegate {
     
+    //Categories for the table view
     let category = ["American", "Italian", "Chinese", "Mexican", "Japanese", "Sushi", "Seafood","Breakfast", "Lunch","Dinner"]
     var checkedCategories = [String]()
     
@@ -41,6 +42,7 @@ class TableViewController: UITableViewController,CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Establishing location settings
         locationManager.requestAlwaysAuthorization()
         if CLLocationManager.locationServicesEnabled(){
             locationManager.delegate = self
@@ -55,7 +57,7 @@ class TableViewController: UITableViewController,CLLocationManagerDelegate {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-    //setting location parameter for api with users current location
+    // Setting location parameter for api with users current location
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             print(location.coordinate)
@@ -65,13 +67,14 @@ class TableViewController: UITableViewController,CLLocationManagerDelegate {
         }
     }
     
+    // Checking the status of the users location
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if (status == CLAuthorizationStatus.denied) {
             showLocationDisabledPopUp()
         }
     }
     
-    //popup that redirects user to settings if location servises disabled
+    // Popup that redirects user to settings if location servises disabled
     func showLocationDisabledPopUp() {
         let alertController = UIAlertController(title: "Background Location Accesses Disabled" ,
                                                 message: "In order for us to supply awesome stuff to do, we need your location",
@@ -97,6 +100,7 @@ class TableViewController: UITableViewController,CLLocationManagerDelegate {
     
     // MARK: - Table view data source
     
+    // Initializing how many sections are in the table view
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -106,12 +110,16 @@ class TableViewController: UITableViewController,CLLocationManagerDelegate {
         return category.count
     }
     
+    // Showing the strings inside of the Category array in the table view cells
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = category[indexPath.row]
         return cell
     }
     
+    
+    // Function of identfying check marked items and adding them to an array for api calling -- This temporary,
+    // In the future we will have this draw from the database.
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.checkmark {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.none
@@ -127,14 +135,19 @@ class TableViewController: UITableViewController,CLLocationManagerDelegate {
     }
     
     
+    // HTTP GET request to return results based user preferences -- NOTE: We know there are security issues with the credentials being exposed. We are still in developing/testing
+    // phase and will be sure to move any sensitive information to database/use hashing tools
     @IBAction func onClickGet(_ sender: Any) {
         let joiner = ","
         let categoryParam = checkedCategories.joined(separator: joiner).lowercased()
         print(categoryParam.lowercased())
+        
+        // Generating te url for the http get request to the yelp api
         guard let url = URL(string:domain+"Food&categories="+categoryParam+locationParam) else { return }
         var request = URLRequest(url:url)
         request.httpMethod = "GET"
         request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        
         request.addValue("Bearer -Cfy-cCnWTY1HVJAb6ISQcj5bS3Q4R8tNZn7nM0u98lemdk5jos9H8Wvce5ZdQbAG7fCVwZ_aOXtvf7ynjcMwH41TKIbghjFb5_E9DHevRGpX8TZOoA-WobdOVb3WXYx", forHTTPHeaderField: "Authorization")
         let session = URLSession.shared
         session.dataTask(with: request) { (data, response, err) in
@@ -145,6 +158,8 @@ class TableViewController: UITableViewController,CLLocationManagerDelegate {
             guard let data = data else { return }
             do {
                 let poi = try JSONDecoder().decode(POI.self, from:data)
+                
+                // Printing the first item return from the api call -- In the future this will be used to generate a push notification for the user
                 print(poi.businesses[0].name as Any)
             } catch let jsonErr {
                 print("Error serializing json:", jsonErr)
