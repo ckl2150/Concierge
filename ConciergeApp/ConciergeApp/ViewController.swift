@@ -8,7 +8,7 @@
 
 import UIKit
 import FirebaseAuth
-import Firebase
+import FirebaseDatabase
 
 class ViewController: UIViewController {
 
@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var loginButton: UIButton!
+    
+    var ref:DatabaseReference!
     
     @IBAction func loginClick(_ sender: UIButton) {
         if emailText.text != "" && passwordText.text != "" {
@@ -40,7 +42,11 @@ class ViewController: UIViewController {
             else {
                 //SignUp
                 Auth.auth().createUser(withEmail: emailText.text!, password: passwordText.text!, completion: { (user, error) in
+                    let email: String = self.emailText.text!
                     if user != nil {
+                        self.ref.child("user").setValue(email)
+//                        ref!.child("user/\(self.emailText.text)/email").setValue([self.emailText.text])
+                        ref.child("user\(email)").setValue(self.passwordText.text)
                         // success
                     }
                     else {
@@ -57,6 +63,7 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
