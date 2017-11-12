@@ -1,5 +1,8 @@
 Concierge is a an everyday travelling companion in the form of an iOS app. It runs in the background of a user's phone and notifies them of interesting locations or points of interest nearby via a push notification.
 
+**NOTE**
+The most up to date code is in the branch dev-James
+
 In order to build the project, you must have the latest version of Xcode installed on your computer (may also require upgrading to Sierra if you have an outdated macOS version).
 
 After opening Xcode, you should be able to build and run an iPhone simulator by pressing the "Play" button on the upper left corner of Xcode.
