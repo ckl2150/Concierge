@@ -24,6 +24,7 @@
 		B2A214F31FCB42670080321D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A214F21FCB42670080321D /* RegisterViewController.swift */; };
 		B2E038A71FB7BAEB00A21F15 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E038A61FB7BAEA00A21F15 /* TableViewController.swift */; };
 		EF5A8B701FA274130038F8A4 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A8B6F1FA274130038F8A4 /* ViewController2.swift */; };
+		EF8EED511FC35921008477CF /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8EED501FC35921008477CF /* TableViewController.swift */; };
 		F97C062E0756F14576DEA7D4 /* Pods_ConciergeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A32F09209DF020B65BE3EF7 /* Pods_ConciergeApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		B2E038A61FB7BAEA00A21F15 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = "/Volumes/Samsung USB/EC601/Concierge/ConciergeApp/ConciergeApp/TableViewController.swift"; sourceTree = "<absolute>"; };
 		C868DBCB3E3E105A4CEE4FE4 /* Pods-ConciergeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConciergeAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConciergeAppUITests/Pods-ConciergeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EF5A8B6F1FA274130038F8A4 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		EF8EED501FC35921008477CF /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,10 +158,10 @@
 		B26AA0D31FA22F1B00176D9C /* ConciergeApp */ = {
 			isa = PBXGroup;
 			children = (
+				EF8EED501FC35921008477CF /* TableViewController.swift */,
 				B26AA0D41FA22F1B00176D9C /* AppDelegate.swift */,
 				B26AA0D61FA22F1B00176D9C /* ViewController.swift */,
 				B23F2BE71FB9D5FB007D8C03 /* BridgingHeader.h */,
-				B2E038A61FB7BAEA00A21F15 /* TableViewController.swift */,
 				EF5A8B6F1FA274130038F8A4 /* ViewController2.swift */,
 				B23182A81FBC91D400A19F32 /* NavHomeController.swift */,
 				B26AA0D81FA22F1B00176D9C /* Main.storyboard */,
@@ -494,13 +496,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B26AA0D71FA22F1B00176D9C /* ViewController.swift in Sources */,
+				EF8EED511FC35921008477CF /* TableViewController.swift in Sources */,
 				B23182A91FBC91D400A19F32 /* NavHomeController.swift in Sources */,
 				B25020D11FBF556000B2BF04 /* GenerateFusionCall.swift in Sources */,
 				B2A214F31FCB42670080321D /* RegisterViewController.swift in Sources */,
 				B2A214F11FCB363A0080321D /* OptionsViewController.swift in Sources */,
 				B26AA0D51FA22F1B00176D9C /* AppDelegate.swift in Sources */,
 				EF5A8B701FA274130038F8A4 /* ViewController2.swift in Sources */,
-				B2E038A71FB7BAEB00A21F15 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
