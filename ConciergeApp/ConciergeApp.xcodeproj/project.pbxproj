@@ -20,6 +20,8 @@
 		B26AA0EA1FA22F1B00176D9C /* ConciergeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26AA0E91FA22F1B00176D9C /* ConciergeAppTests.swift */; };
 		B26AA0F51FA22F1B00176D9C /* ConciergeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26AA0F41FA22F1B00176D9C /* ConciergeAppUITests.swift */; };
 		B26AA1031FA231E700176D9C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B26AA1021FA231E700176D9C /* GoogleService-Info.plist */; };
+		B2A214F11FCB363A0080321D /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A214F01FCB363A0080321D /* OptionsViewController.swift */; };
+		B2A214F31FCB42670080321D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A214F21FCB42670080321D /* RegisterViewController.swift */; };
 		B2E038A71FB7BAEB00A21F15 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E038A61FB7BAEA00A21F15 /* TableViewController.swift */; };
 		EF5A8B701FA274130038F8A4 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A8B6F1FA274130038F8A4 /* ViewController2.swift */; };
 		F97C062E0756F14576DEA7D4 /* Pods_ConciergeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A32F09209DF020B65BE3EF7 /* Pods_ConciergeApp.framework */; };
@@ -69,6 +71,8 @@
 		B26AA0F41FA22F1B00176D9C /* ConciergeAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConciergeAppUITests.swift; sourceTree = "<group>"; };
 		B26AA0F61FA22F1C00176D9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B26AA1021FA231E700176D9C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B2A214F01FCB363A0080321D /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
+		B2A214F21FCB42670080321D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B2E038A61FB7BAEA00A21F15 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = "/Volumes/Samsung USB/EC601/Concierge/ConciergeApp/ConciergeApp/TableViewController.swift"; sourceTree = "<absolute>"; };
 		C868DBCB3E3E105A4CEE4FE4 /* Pods-ConciergeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConciergeAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConciergeAppUITests/Pods-ConciergeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EF5A8B6F1FA274130038F8A4 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
@@ -159,6 +163,8 @@
 				EF5A8B6F1FA274130038F8A4 /* ViewController2.swift */,
 				B23182A81FBC91D400A19F32 /* NavHomeController.swift */,
 				B26AA0D81FA22F1B00176D9C /* Main.storyboard */,
+				B2A214F21FCB42670080321D /* RegisterViewController.swift */,
+				B2A214F01FCB363A0080321D /* OptionsViewController.swift */,
 				B26AA0DB1FA22F1B00176D9C /* Assets.xcassets */,
 				B26AA0DD1FA22F1B00176D9C /* LaunchScreen.storyboard */,
 				B26AA1021FA231E700176D9C /* GoogleService-Info.plist */,
@@ -490,6 +496,8 @@
 				B26AA0D71FA22F1B00176D9C /* ViewController.swift in Sources */,
 				B23182A91FBC91D400A19F32 /* NavHomeController.swift in Sources */,
 				B25020D11FBF556000B2BF04 /* GenerateFusionCall.swift in Sources */,
+				B2A214F31FCB42670080321D /* RegisterViewController.swift in Sources */,
+				B2A214F11FCB363A0080321D /* OptionsViewController.swift in Sources */,
 				B26AA0D51FA22F1B00176D9C /* AppDelegate.swift in Sources */,
 				EF5A8B701FA274130038F8A4 /* ViewController2.swift in Sources */,
 				B2E038A71FB7BAEB00A21F15 /* TableViewController.swift in Sources */,

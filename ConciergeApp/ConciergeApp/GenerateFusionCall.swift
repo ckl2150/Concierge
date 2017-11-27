@@ -15,7 +15,6 @@ import FirebaseDatabase
 public class GenerateFusionCall {
     
     var domain = "https://api.yelp.com/v3/businesses/search?term="
-    var locationParam = "&latitude=42.3601&longitude=-71.0589"
     var catParam = ""
     let locationManager = CLLocationManager()
     
@@ -38,22 +37,20 @@ public class GenerateFusionCall {
         }
     }
     
-    @objc func fusionCall() {
+    @objc public func fusionCall(locationParam: String) {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
         self.paramSnap { (catParam) -> () in
             // Generating te url for the http get request to the yelp api
-            guard let url = URL(string:self.domain+"Food&categories="+catParam+self.locationParam) else { return }
+            guard let url = URL(string:self.domain+"Food&categories="+catParam+locationParam) else { return }
             var request = URLRequest(url:url)
             request.httpMethod = "GET"
             request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-            
             request.addValue("Bearer -Cfy-cCnWTY1HVJAb6ISQcj5bS3Q4R8tNZn7nM0u98lemdk5jos9H8Wvce5ZdQbAG7fCVwZ_aOXtvf7ynjcMwH41TKIbghjFb5_E9DHevRGpX8TZOoA-WobdOVb3WXYx", forHTTPHeaderField: "Authorization")
             let session = URLSession.shared
             session.dataTask(with: request) { (data, response, err) in
                 if let response = response {
                     print(response)
                 }
-                
                 guard let data = data else { return }
                 do {
                     let poi = try JSONDecoder().decode(POI.self, from:data)
@@ -65,7 +62,6 @@ public class GenerateFusionCall {
                     
                     let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
                     let request = UNNotificationRequest.init(identifier: "poiFound", content: Content, trigger: trigger)
-                    
                     UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
                     
                 } catch let jsonErr {

@@ -13,50 +13,33 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
-    @IBOutlet weak var segmentControl: UISegmentedControl!
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var loginBut: UIButton!
+    
     
     var ref:DatabaseReference!
     
-    @IBAction func loginClick(_ sender: UIButton) {
+    @IBAction func registerClick(_ sender: Any) {
+        self.performSegue(withIdentifier: "regSegue", sender: self)
+    }
+    
+    
+    @IBAction func loginAction(_ sender: UIButton) {
         if emailText.text != "" && passwordText.text != "" {
-            
-            if segmentControl.selectedSegmentIndex == 0 {
-                //Login
-                Auth.auth().signIn(withEmail: emailText.text!, password: passwordText.text!, completion: { (user, error) in
-                    if user != nil {
-                        //success
-                        self.performSegue(withIdentifier: "segue", sender: self)
+            //Login
+            Auth.auth().signIn(withEmail: emailText.text!, password: passwordText.text!, completion: { (user, error) in
+                if user != nil {
+                    //success
+                    self.performSegue(withIdentifier: "loginSegue", sender: self)
+                }
+                else {
+                    if let myError = error?.localizedDescription {
+                        print(myError)
                     }
                     else {
-                        if let myError = error?.localizedDescription {
-                            print(myError)
-                        }
-                        else {
-                            print("ERROR")
-                        }
+                        print("ERROR")
                     }
-                })
-            }
-            else {
-                //SignUp
-                Auth.auth().createUser(withEmail: emailText.text!, password: passwordText.text!, completion: { (user, error) in
-                    if user != nil {
-                        self.updateDB()
-                        //                        ref!.child("user/\(self.emailText.text)/email").setValue([self.emailText.text])
-                        //                        ref.child("user\(email)").setValue(self.passwordText.text)
-                        // success
-                    }
-                    else {
-                        if let myError = error?.localizedDescription {
-                            print(myError)
-                        }
-                        else {
-                            print("ERROR")
-                        }
-                    }
-                })
-            }
+                }
+            })
         }
     }
     override func viewDidLoad() {
