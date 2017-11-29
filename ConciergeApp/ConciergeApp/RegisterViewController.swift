@@ -54,7 +54,7 @@ class RegisterViewController: UIViewController {
         print(passwordText.text!)
         let hashedData: NSData = sha256(data: emailText.text!.data(using: String.Encoding.utf8)! as NSData)
         let hashedEmail: String = hexStringFromData(input: sha256(data: hashedData))
-         ref.child("users").child(hashedEmail).setValue(["username": emailText.text!, "password": passwordText.text!])
+        ref.child("users").child(hashedEmail).setValue(["username": emailText.text!, "password": passwordText.text!])
         ref.child("users").child(hashedEmail).child("account").child("firstName").setValue(fName.text)
         ref.child("users").child(hashedEmail).child("account").child("lastName").setValue(lName.text)
         ref.child("users").child(hashedEmail).child("account").child("userName").setValue(userName.text)

@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
-class OptionsViewController: UITableViewController {
+class OptionsViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var notificationTimeSelection: UIPickerView!
+    
+    let timeOptions = ["5 min", "10 min","30 min","60 min"]
+    var ref:DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -21,8 +28,48 @@ class OptionsViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     @IBAction func done(_ sender: UIButton) {
+        
         name.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
        
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var pickerLabel: UILabel? = (view as? UILabel)
+        if pickerLabel == nil {
+            pickerLabel = UILabel()
+            pickerLabel?.font = UIFont(name: "Helvetica",size: 14)
+            pickerLabel?.textAlignment = .center
+        }
+        
+        pickerLabel?.text = timeOptions[row]
+        
+        return pickerLabel!
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return timeOptions[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return timeOptions.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let user = Auth.auth().currentUser
+        let hashedData: NSData = sha256(data: user!.email!.data(using: String.Encoding.utf8)! as NSData)
+        let hashedEmail: String = hexStringFromData(input: sha256(data: hashedData))
+        
+        if Auth.auth().currentUser != nil {
+            self.ref.child("users").child(hashedEmail).child("profile").child("notificationFreq").setValue(Double(timeOptions[row].components(separatedBy: " ")[0]))
+        }
+        else {
+            print("no user is logged in")
+        }
+        
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
@@ -44,6 +91,25 @@ class OptionsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 3
+    }
+    
+    func sha256(data : NSData) -> NSData {
+        var hash = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
+        CC_SHA256(data.bytes, CC_LONG(data.length), &hash)
+        let res = NSData(bytes: hash, length: Int(CC_SHA256_DIGEST_LENGTH))
+        return res
+    }
+    
+    private func hexStringFromData(input: NSData) -> String {
+        var bytes = [UInt8](repeating: 0, count: input.length)
+        input.getBytes(&bytes, length: input.length)
+        
+        var hexString = ""
+        for byte in bytes {
+            hexString += String(format:"%02x", UInt8(byte))
+        }
+        
+        return hexString
     }
 
     /*

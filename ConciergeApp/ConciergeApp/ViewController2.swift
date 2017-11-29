@@ -15,10 +15,13 @@ import MapKit
 
 class ViewController2: UIViewController, CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
    
-    
     let locationManager = CLLocationManager()
     var locationParam: String = ""
     var ref = Database.database().reference()
+    var bgTask = UIBackgroundTaskInvalid
+    var lastFiredNotification:NSDate = NSDate()
+    var notificationPreference: Double = -1
+    
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var profPic: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
@@ -36,7 +39,7 @@ class ViewController2: UIViewController, CLLocationManagerDelegate, UIImagePicke
         if CLLocationManager.locationServicesEnabled(){
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.startUpdatingLocation()
+            locationManager.startMonitoringSignificantLocationChanges()
         }
         
         Auth.auth().addStateDidChangeListener { (auth, user) in
@@ -54,27 +57,6 @@ class ViewController2: UIViewController, CLLocationManagerDelegate, UIImagePicke
                 }
             })
         }
-        
-        
-//        let user = Auth.auth().currentUser
-//        let hashedData: NSData = sha256(data: user!.email!.data(using: String.Encoding.utf8)! as NSData)
-//        let hashedEmail: String = hexStringFromData(input: sha256(data: hashedData))
-//        self.ref.child("users").child(hashedEmail).child("account").ref.observe( .value, with: { (snapshot) -> Void in
-//            if snapshot.exists() {
-//                for s in snapshot.children.allObjects as! [DataSnapshot] {
-//                    print(s.key)
-//                    if s.key == "userName" {
-//                        print(s.value as! String)
-//                        self.usernameLabel.text = (s.value as! String)
-//                    }
-//                }
-//            }
-//        })
-        
-        
-        print(Auth.auth().currentUser?.email as Any)
-        
-        
     }
     
     func sha256(data : NSData) -> NSData {
@@ -99,7 +81,6 @@ class ViewController2: UIViewController, CLLocationManagerDelegate, UIImagePicke
     @IBAction func addPic(_ sender: UIButton) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
-        
         let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
         
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action: UIAlertAction) in
@@ -136,13 +117,53 @@ class ViewController2: UIViewController, CLLocationManagerDelegate, UIImagePicke
         picker.dismiss(animated: true, completion: nil)
     }
     
+    func getNotificationFrequency(completion: @escaping ([DataSnapshot]) -> ()) {
+        if let user = Auth.auth().currentUser {
+            let hashedData: NSData = sha256(data: user.email!.data(using: String.Encoding.utf8)! as NSData)
+            let hashedEmail: String = hexStringFromData(input: sha256(data: hashedData))
+            self.ref.child("users").child(hashedEmail).child("profile").ref.observe( .value, with: { (snapshot) -> Void in
+                if snapshot.exists() {
+                    completion(snapshot.children.allObjects as! [DataSnapshot])
+                }
+            })
+        }
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
         if let location = locations.first {
             print(location.coordinate)
             let lat:String = String(location.coordinate.latitude)
             let long:String = String(location.coordinate.longitude)
             locationParam = "&latitude="+lat+"&longitude="+long
+            
         }
+        
+        self.getNotificationFrequency { (snapshot) -> () in
+            for s in snapshot {
+                if s.key == "notificationFreq" {
+                    self.notificationPreference = 60 * (s.value as! Double)
+                }
+            }
+      
+            let currDate:NSDate = NSDate()
+                if self.notificationPreference > 0 && currDate.timeIntervalSince(self.lastFiredNotification as Date) < 30 {
+                print("Notification not requested yet")
+            }
+            else {
+                print("Preparing fusion call")
+                self.lastFiredNotification = NSDate()
+                let fusion = Fusion()
+                fusion.goFusion(locationParam: self.locationParam)
+            }
+        }
+        
+        if let location = locations.first {
+            let lat:String = String(location.coordinate.latitude)
+            let long:String = String(location.coordinate.longitude)
+            locationParam = "&latitude="+lat+"&longitude="+long
+        }
+        
         let userLocation = locations.first
         let span: MKCoordinateSpan = MKCoordinateSpanMake(0.01,0.01)
         let myLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(userLocation!.coordinate.latitude, userLocation!.coordinate.longitude)
@@ -176,16 +197,7 @@ class ViewController2: UIViewController, CLLocationManagerDelegate, UIImagePicke
         alertController.addAction(openAction)
         self.present(alertController, animated: true, completion: nil)
     }
-    @IBAction func goFusion(_ sender: UIButton) {
-//        let fusion = GenerateFusionCall()
-//        fusion.fusionCall(locationParam: locationParam)
-    
-    }
-    
-//    var fusion = GenerateFusionCall()
-//    var updateTimer = Timer.scheduledTimer(timeInterval: 15.0, target: self, selector: #selector(GenerateFusionCall().fusionCall(locationParam: )), userInfo: self.locationParam as String, repeats: true)
-    
-    
+
     //log the user out
     @IBAction func logoutAction(_ sender: UIButton) {
         try! Auth.auth().signOut()
