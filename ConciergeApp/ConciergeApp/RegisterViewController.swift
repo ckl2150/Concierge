@@ -52,8 +52,8 @@ class RegisterViewController: UIViewController {
     func updateDB() {
         print(emailText.text!)
         print(passwordText.text!)
-        let hashedData: NSData = sha256(data: emailText.text!.data(using: String.Encoding.utf8)! as NSData)
-        let hashedEmail: String = hexStringFromData(input: sha256(data: hashedData))
+        let hashedData: NSData = Hash.sha256(data: emailText.text!.data(using: String.Encoding.utf8)! as NSData)
+        let hashedEmail: String = Hash.hexStringFromData(input: Hash.sha256(data: hashedData))
         ref.child("users").child(hashedEmail).setValue(["username": emailText.text!, "password": passwordText.text!])
         ref.child("users").child(hashedEmail).child("account").child("firstName").setValue(fName.text)
         ref.child("users").child(hashedEmail).child("account").child("lastName").setValue(lName.text)
@@ -61,24 +61,24 @@ class RegisterViewController: UIViewController {
         
     }
     
-    func sha256(data : NSData) -> NSData {
-        var hash = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
-        CC_SHA256(data.bytes, CC_LONG(data.length), &hash)
-        let res = NSData(bytes: hash, length: Int(CC_SHA256_DIGEST_LENGTH))
-        return res
-    }
-    
-    private func hexStringFromData(input: NSData) -> String {
-        var bytes = [UInt8](repeating: 0, count: input.length)
-        input.getBytes(&bytes, length: input.length)
-        
-        var hexString = ""
-        for byte in bytes {
-            hexString += String(format:"%02x", UInt8(byte))
-        }
-        
-        return hexString
-    }
+//    func sha256(data : NSData) -> NSData {
+//        var hash = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
+//        CC_SHA256(data.bytes, CC_LONG(data.length), &hash)
+//        let res = NSData(bytes: hash, length: Int(CC_SHA256_DIGEST_LENGTH))
+//        return res
+//    }
+//    
+//    private func hexStringFromData(input: NSData) -> String {
+//        var bytes = [UInt8](repeating: 0, count: input.length)
+//        input.getBytes(&bytes, length: input.length)
+//        
+//        var hexString = ""
+//        for byte in bytes {
+//            hexString += String(format:"%02x", UInt8(byte))
+//        }
+//        
+//        return hexString
+//    }
     
 
     /*

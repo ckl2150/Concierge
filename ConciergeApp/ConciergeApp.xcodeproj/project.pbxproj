@@ -26,6 +26,7 @@
 		B2F326C01FCDC3020036A8D7 /* Fusion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F326BF1FCDC3020036A8D7 /* Fusion.swift */; };
 		B2F326C21FCDCB2B0036A8D7 /* PrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F326C11FCDCB2B0036A8D7 /* PrefsViewController.swift */; };
 		EF5A8B701FA274130038F8A4 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A8B6F1FA274130038F8A4 /* ViewController2.swift */; };
+		EF80ECE41FCF35A4005C4DB1 /* Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF80ECE31FCF35A4005C4DB1 /* Hash.swift */; };
 		EF8EED511FC35921008477CF /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8EED501FC35921008477CF /* TableViewController.swift */; };
 		F97C062E0756F14576DEA7D4 /* Pods_ConciergeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A32F09209DF020B65BE3EF7 /* Pods_ConciergeApp.framework */; };
 /* End PBXBuildFile section */
@@ -81,6 +82,7 @@
 		B2F326C11FCDCB2B0036A8D7 /* PrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsViewController.swift; sourceTree = "<group>"; };
 		C868DBCB3E3E105A4CEE4FE4 /* Pods-ConciergeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConciergeAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConciergeAppUITests/Pods-ConciergeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EF5A8B6F1FA274130038F8A4 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		EF80ECE31FCF35A4005C4DB1 /* Hash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hash.swift; sourceTree = "<group>"; };
 		EF8EED501FC35921008477CF /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,6 +181,7 @@
 				B26AA1021FA231E700176D9C /* GoogleService-Info.plist */,
 				B26AA0E01FA22F1B00176D9C /* Info.plist */,
 				B25020D01FBF556000B2BF04 /* GenerateFusionCall.swift */,
+				EF80ECE31FCF35A4005C4DB1 /* Hash.swift */,
 			);
 			path = ConciergeApp;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2F326C01FCDC3020036A8D7 /* Fusion.swift in Sources */,
+				EF80ECE41FCF35A4005C4DB1 /* Hash.swift in Sources */,
 				B26AA0D71FA22F1B00176D9C /* ViewController.swift in Sources */,
 				EF8EED511FC35921008477CF /* TableViewController.swift in Sources */,
 				B23182A91FBC91D400A19F32 /* NavHomeController.swift in Sources */,

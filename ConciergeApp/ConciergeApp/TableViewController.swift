@@ -51,8 +51,8 @@ class TableViewController: UITableViewController,CLLocationManagerDelegate {
     // Function for identfying check marked items and adding them to an array for api calling
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = Auth.auth().currentUser
-        let hashedData: NSData = sha256(data: user!.email!.data(using: String.Encoding.utf8)! as NSData)
-        let hashedEmail: String = hexStringFromData(input: sha256(data: hashedData))
+        let hashedData: NSData = Hash.sha256(data: user!.email!.data(using: String.Encoding.utf8)! as NSData)
+        let hashedEmail: String = Hash.hexStringFromData(input: Hash.sha256(data: hashedData))
         
         if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCellAccessoryType.checkmark {
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCellAccessoryType.none
@@ -82,8 +82,8 @@ class TableViewController: UITableViewController,CLLocationManagerDelegate {
     
     func getSnapCellRowAt(completion: @escaping ([DataSnapshot]) -> ()) {
         if let user = Auth.auth().currentUser {
-            let hashedData: NSData = sha256(data: user.email!.data(using: String.Encoding.utf8)! as NSData)
-            let hashedEmail: String = hexStringFromData(input: sha256(data: hashedData))
+            let hashedData: NSData = Hash.sha256(data: user.email!.data(using: String.Encoding.utf8)! as NSData)
+            let hashedEmail: String = Hash.hexStringFromData(input: Hash.sha256(data: hashedData))
             self.ref.child("users").child(hashedEmail).child("foodPreferences").ref.observe( .value, with: { (snapshot) -> Void in
                 if snapshot.exists() {
                    completion(snapshot.children.allObjects as! [DataSnapshot])
@@ -94,8 +94,8 @@ class TableViewController: UITableViewController,CLLocationManagerDelegate {
     
     func getSnapDidSelect(completion: @escaping ([DataSnapshot]) -> ()) {
         if let user = Auth.auth().currentUser {
-            let hashedData: NSData = sha256(data: user.email!.data(using: String.Encoding.utf8)! as NSData)
-            let hashedEmail: String = hexStringFromData(input: sha256(data: hashedData))
+            let hashedData: NSData = Hash.sha256(data: user.email!.data(using: String.Encoding.utf8)! as NSData)
+            let hashedEmail: String = Hash.hexStringFromData(input: Hash.sha256(data: hashedData))
             self.ref.child("users").child(hashedEmail).child("foodPreferences").ref.observe( .value, with: { (snapshot) -> Void in
                 if snapshot.exists() {
                     completion(snapshot.children.allObjects as! [DataSnapshot])
@@ -125,25 +125,25 @@ class TableViewController: UITableViewController,CLLocationManagerDelegate {
     
    
     
-    // Hashing functions for database retrieval and storage
-    func sha256(data : NSData) -> NSData {
-        var hash = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
-        CC_SHA256(data.bytes, CC_LONG(data.length), &hash)
-        let res = NSData(bytes: hash, length: Int(CC_SHA256_DIGEST_LENGTH))
-        return res
-    }
-    
-    private func hexStringFromData(input: NSData) -> String {
-        var bytes = [UInt8](repeating: 0, count: input.length)
-        input.getBytes(&bytes, length: input.length)
-        var hexString = ""
-        
-        for byte in bytes {
-            hexString += String(format:"%02x", UInt8(byte))
-        }
-        
-        return hexString
-    }
+//    // Hashing functions for database retrieval and storage
+//    func sha256(data : NSData) -> NSData {
+//        var hash = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
+//        CC_SHA256(data.bytes, CC_LONG(data.length), &hash)
+//        let res = NSData(bytes: hash, length: Int(CC_SHA256_DIGEST_LENGTH))
+//        return res
+//    }
+//
+//    private func hexStringFromData(input: NSData) -> String {
+//        var bytes = [UInt8](repeating: 0, count: input.length)
+//        input.getBytes(&bytes, length: input.length)
+//        var hexString = ""
+//
+//        for byte in bytes {
+//            hexString += String(format:"%02x", UInt8(byte))
+//        }
+//
+//        return hexString
+//    }
     
     
     /*

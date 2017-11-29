@@ -60,8 +60,8 @@ class OptionsViewController: UITableViewController, UIPickerViewDataSource, UIPi
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let user = Auth.auth().currentUser
-        let hashedData: NSData = sha256(data: user!.email!.data(using: String.Encoding.utf8)! as NSData)
-        let hashedEmail: String = hexStringFromData(input: sha256(data: hashedData))
+        let hashedData: NSData = Hash.sha256(data: user!.email!.data(using: String.Encoding.utf8)! as NSData)
+        let hashedEmail: String = Hash.hexStringFromData(input: Hash.sha256(data: hashedData))
         
         if Auth.auth().currentUser != nil {
             self.ref.child("users").child(hashedEmail).child("profile").child("notificationFreq").setValue(Double(timeOptions[row].components(separatedBy: " ")[0]))
@@ -93,24 +93,24 @@ class OptionsViewController: UITableViewController, UIPickerViewDataSource, UIPi
         return 3
     }
     
-    func sha256(data : NSData) -> NSData {
-        var hash = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
-        CC_SHA256(data.bytes, CC_LONG(data.length), &hash)
-        let res = NSData(bytes: hash, length: Int(CC_SHA256_DIGEST_LENGTH))
-        return res
-    }
-    
-    private func hexStringFromData(input: NSData) -> String {
-        var bytes = [UInt8](repeating: 0, count: input.length)
-        input.getBytes(&bytes, length: input.length)
-        
-        var hexString = ""
-        for byte in bytes {
-            hexString += String(format:"%02x", UInt8(byte))
-        }
-        
-        return hexString
-    }
+//    func sha256(data : NSData) -> NSData {
+//        var hash = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
+//        CC_SHA256(data.bytes, CC_LONG(data.length), &hash)
+//        let res = NSData(bytes: hash, length: Int(CC_SHA256_DIGEST_LENGTH))
+//        return res
+//    }
+//    
+//    private func hexStringFromData(input: NSData) -> String {
+//        var bytes = [UInt8](repeating: 0, count: input.length)
+//        input.getBytes(&bytes, length: input.length)
+//        
+//        var hexString = ""
+//        for byte in bytes {
+//            hexString += String(format:"%02x", UInt8(byte))
+//        }
+//        
+//        return hexString
+//    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

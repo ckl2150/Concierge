@@ -43,8 +43,8 @@ class ViewController2: UIViewController, CLLocationManagerDelegate, UIImagePicke
         }
         
         Auth.auth().addStateDidChangeListener { (auth, user) in
-            let hashedData: NSData = self.sha256(data: user!.email!.data(using: String.Encoding.utf8)! as NSData)
-            let hashedEmail: String = self.hexStringFromData(input: self.sha256(data: hashedData))
+            let hashedData: NSData = Hash.sha256(data: user!.email!.data(using: String.Encoding.utf8)! as NSData)
+            let hashedEmail: String = Hash.hexStringFromData(input: Hash.sha256(data: hashedData))
             self.ref.child("users").child(hashedEmail).child("account").ref.observe( .value, with: { (snapshot) -> Void in
                 if snapshot.exists() {
                     for s in snapshot.children.allObjects as! [DataSnapshot] {
@@ -59,24 +59,24 @@ class ViewController2: UIViewController, CLLocationManagerDelegate, UIImagePicke
         }
     }
     
-    func sha256(data : NSData) -> NSData {
-        var hash = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
-        CC_SHA256(data.bytes, CC_LONG(data.length), &hash)
-        let res = NSData(bytes: hash, length: Int(CC_SHA256_DIGEST_LENGTH))
-        return res
-    }
-    
-    private func hexStringFromData(input: NSData) -> String {
-        var bytes = [UInt8](repeating: 0, count: input.length)
-        input.getBytes(&bytes, length: input.length)
-        var hexString = ""
-        
-        for byte in bytes {
-            hexString += String(format:"%02x", UInt8(byte))
-        }
-        
-        return hexString
-    }
+//    func sha256(data : NSData) -> NSData {
+//        var hash = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
+//        CC_SHA256(data.bytes, CC_LONG(data.length), &hash)
+//        let res = NSData(bytes: hash, length: Int(CC_SHA256_DIGEST_LENGTH))
+//        return res
+//    }
+//    
+//    private func hexStringFromData(input: NSData) -> String {
+//        var bytes = [UInt8](repeating: 0, count: input.length)
+//        input.getBytes(&bytes, length: input.length)
+//        var hexString = ""
+//
+//        for byte in bytes {
+//            hexString += String(format:"%02x", UInt8(byte))
+//        }
+//
+//        return hexString
+//    }
     
     @IBAction func addPic(_ sender: UIButton) {
         let imagePickerController = UIImagePickerController()
@@ -119,8 +119,8 @@ class ViewController2: UIViewController, CLLocationManagerDelegate, UIImagePicke
     
     func getNotificationFrequency(completion: @escaping ([DataSnapshot]) -> ()) {
         if let user = Auth.auth().currentUser {
-            let hashedData: NSData = sha256(data: user.email!.data(using: String.Encoding.utf8)! as NSData)
-            let hashedEmail: String = hexStringFromData(input: sha256(data: hashedData))
+            let hashedData: NSData = Hash.sha256(data: user.email!.data(using: String.Encoding.utf8)! as NSData)
+            let hashedEmail: String = Hash.hexStringFromData(input: Hash.sha256(data: hashedData))
             self.ref.child("users").child(hashedEmail).child("profile").ref.observe( .value, with: { (snapshot) -> Void in
                 if snapshot.exists() {
                     completion(snapshot.children.allObjects as! [DataSnapshot])

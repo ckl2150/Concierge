@@ -84,8 +84,8 @@ public class Fusion {
         var categoryParam = [String]()
         var catParam: String = ""
         if let user = Auth.auth().currentUser {
-            let hashedData: NSData = sha256(data: user.email!.data(using: String.Encoding.utf8)! as NSData)
-            let hashedEmail: String = hexStringFromData(input: sha256(data: hashedData))
+            let hashedData: NSData = Hash.sha256(data: user.email!.data(using: String.Encoding.utf8)! as NSData)
+            let hashedEmail: String = Hash.hexStringFromData(input: Hash.sha256(data: hashedData))
             _ = self.ref.child("users").child(hashedEmail).child("foodPreferences").ref.observe( .value, with: { (snapshot) -> Void in
                 if snapshot.exists() {
                     for snap in snapshot.children.allObjects as! [DataSnapshot] {
@@ -101,23 +101,23 @@ public class Fusion {
         }
     }
     
-    func sha256(data : NSData) -> NSData {
-        var hash = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
-        CC_SHA256(data.bytes, CC_LONG(data.length), &hash)
-        let res = NSData(bytes: hash, length: Int(CC_SHA256_DIGEST_LENGTH))
-        return res
-    }
-    
-    private func hexStringFromData(input: NSData) -> String {
-        var bytes = [UInt8](repeating: 0, count: input.length)
-        input.getBytes(&bytes, length: input.length)
-        var hexString = ""
-        
-        for byte in bytes {
-            hexString += String(format:"%02x", UInt8(byte))
-        }
-        
-        return hexString
-    }
+//    func sha256(data : NSData) -> NSData {
+//        var hash = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
+//        CC_SHA256(data.bytes, CC_LONG(data.length), &hash)
+//        let res = NSData(bytes: hash, length: Int(CC_SHA256_DIGEST_LENGTH))
+//        return res
+//    }
+//    
+//    private func hexStringFromData(input: NSData) -> String {
+//        var bytes = [UInt8](repeating: 0, count: input.length)
+//        input.getBytes(&bytes, length: input.length)
+//        var hexString = ""
+//        
+//        for byte in bytes {
+//            hexString += String(format:"%02x", UInt8(byte))
+//        }
+//        
+//        return hexString
+//    }
 }
 
