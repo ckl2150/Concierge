@@ -5,66 +5,61 @@
 //  Created by James Schulman on 10/26/17.
 //  Copyright © 2017 James Schulman. All rights reserved.
 //
-
 import UIKit
 import FirebaseAuth
-import Firebase
+import FirebaseDatabase
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
-    @IBOutlet weak var segmentControl: UISegmentedControl!
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var loginBut: UIButton!
+    @IBOutlet weak var loginBox: UIImageView!
     
-    @IBAction func loginClick(_ sender: UIButton) {
+    
+    var ref:DatabaseReference!
+    
+    @IBAction func registerClick(_ sender: Any) {
+        self.performSegue(withIdentifier: "regSegue", sender: self)
+    }
+    
+    
+    @IBAction func loginAction(_ sender: UIButton) {
         if emailText.text != "" && passwordText.text != "" {
-            
-            if segmentControl.selectedSegmentIndex == 0 {
-                //Login
-                Auth.auth().signIn(withEmail: emailText.text!, password: passwordText.text!, completion: { (user, error) in
-                    if user != nil {
-                        //success
-                        self.performSegue(withIdentifier: "segue", sender: self)
+            //Login
+            Auth.auth().signIn(withEmail: emailText.text!, password: passwordText.text!, completion: { (user, error) in
+                if user != nil {
+                    //success
+                    self.performSegue(withIdentifier: "loginSegue", sender: self)
+                }
+                else {
+                    if let myError = error?.localizedDescription {
+                        print(myError)
                     }
                     else {
-                        if let myError = error?.localizedDescription {
-                            print(myError)
-                        }
-                        else {
-                            print("ERROR")
-                        }
+                        print("ERROR")
                     }
-                })
-            }
-            else {
-                //SignUp
-                Auth.auth().createUser(withEmail: emailText.text!, password: passwordText.text!, completion: { (user, error) in
-                    if user != nil {
-                        // success
-                    }
-                    else {
-                        if let myError = error?.localizedDescription {
-                            print(myError)
-                        }
-                        else {
-                            print("ERROR")
-                        }
-                    }
-                })
-            }
+                }
+            })
         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
+        loginBox.layer.cornerRadius = 10
+        loginBox.clipsToBounds = true
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    func updateDB() {
+        let hashedData: NSData = Hash.sha256(data: emailText.text!.data(using: String.Encoding.utf8)! as NSData)
+        let hashedEmail: String = Hash.hexStringFromData(input: Hash.sha256(data: hashedData))
+        ref.child("users").child(hashedEmail).setValue(["username": emailText.text!, "password": passwordText.text!])
+    }
+        
 }
-
