@@ -12,6 +12,7 @@ import FirebaseDatabase
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var registerSurround: UIImageView!
     @IBOutlet weak var fName: UITextField!
     @IBOutlet weak var lName: UITextField!
     @IBOutlet weak var userName: UITextField!
@@ -23,7 +24,8 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-
+        registerSurround.layer.cornerRadius = 10
+        registerSurround.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
     @IBAction func registerClick(_ sender: UIButton) {
@@ -58,29 +60,10 @@ class RegisterViewController: UIViewController {
         ref.child("users").child(hashedEmail).child("account").child("firstName").setValue(fName.text)
         ref.child("users").child(hashedEmail).child("account").child("lastName").setValue(lName.text)
         ref.child("users").child(hashedEmail).child("account").child("userName").setValue(userName.text)
+        ref.child("users").child(hashedEmail).child("profile").child("notificationFreq").setValue(Double(5))
         
     }
     
-//    func sha256(data : NSData) -> NSData {
-//        var hash = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
-//        CC_SHA256(data.bytes, CC_LONG(data.length), &hash)
-//        let res = NSData(bytes: hash, length: Int(CC_SHA256_DIGEST_LENGTH))
-//        return res
-//    }
-//    
-//    private func hexStringFromData(input: NSData) -> String {
-//        var bytes = [UInt8](repeating: 0, count: input.length)
-//        input.getBytes(&bytes, length: input.length)
-//        
-//        var hexString = ""
-//        for byte in bytes {
-//            hexString += String(format:"%02x", UInt8(byte))
-//        }
-//        
-//        return hexString
-//    }
-    
-
     /*
     // MARK: - Navigation
 

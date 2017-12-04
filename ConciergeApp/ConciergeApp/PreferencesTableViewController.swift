@@ -122,37 +122,6 @@ class PreferencesTableViewController: UITableViewController ,CLLocationManagerDe
         cell.textLabel?.text = category[indexPath.row]
         return cell
     }
-    
-//    // Hashing functions for database retrieval and storage
-//    func sha256(data : NSData) -> NSData {
-//        var hash = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
-//        CC_SHA256(data.bytes, CC_LONG(data.length), &hash)
-//        let res = NSData(bytes: hash, length: Int(CC_SHA256_DIGEST_LENGTH))
-//        return res
-//    }
-//
-//    private func hexStringFromData(input: NSData) -> String {
-//        var bytes = [UInt8](repeating: 0, count: input.length)
-//        input.getBytes(&bytes, length: input.length)
-//        var hexString = ""
-//
-//        for byte in bytes {
-//            hexString += String(format:"%02x", UInt8(byte))
-//        }
-//
-//        return hexString
-//    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

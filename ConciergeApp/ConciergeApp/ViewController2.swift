@@ -13,7 +13,7 @@ import FirebaseDatabase
 import UserNotifications
 import MapKit
 
-class ViewController2: UIViewController, CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController2: UIViewController, CLLocationManagerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,MKMapViewDelegate {
    
     let locationManager = CLLocationManager()
     var locationParam: String = ""
@@ -21,27 +21,71 @@ class ViewController2: UIViewController, CLLocationManagerDelegate, UIImagePicke
     var bgTask = UIBackgroundTaskInvalid
     var lastFiredNotification:NSDate = NSDate()
     var notificationPreference: Double = -1
+    var domain = "https://api.yelp.com/v3/businesses/search?term="
+    var flag: Bool = false
+    var myUrl: String = ""
     
+    @IBOutlet weak var learnMoreBut: UIButton!
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var profPic: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
-    
+    @IBOutlet weak var profileNameBlur: UIVisualEffectView!
+    @IBOutlet weak var localSpotView: UIImageView!
+    @IBOutlet weak var localSpotDistLabel: UILabel!
+    @IBOutlet weak var localSpotLabel: UILabel!
+    @IBOutlet weak var localSpotPriceLabel: UILabel!
     @IBAction func settingsButton(_ sender: Any) {
         self.performSegue(withIdentifier: "preferencesSegue", sender: nil)
     }
 
+    
+    //Structure to hold all businesses returned from the API
+    struct POI: Decodable {
+        let businesses: [Business]
+    }
+    
+    //Struct for individual businesses
+    struct Business: Decodable {
+        let name: String?
+        let distance: Float?
+        let image_url: String?
+        let price: String?
+        let url: String?
+        
+        init(json: [String: Any]) {
+            name = json["name"] as? String ?? ""
+            distance = json["distance"] as? Float
+            image_url = json["image_url"] as? String ?? ""
+            price = json["price"] as? String ?? ""
+            url = json["url"] as? String ?? ""
+        }
+    }
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        flag = false
+        
+        map.delegate = self
+        map.showsScale = true
+        
         profPic.layer.cornerRadius = profPic.frame.size.width/2
         profPic.clipsToBounds = true
+        
+        profileNameBlur.layer.cornerRadius = 5
+        profileNameBlur.clipsToBounds = true
+        
         locationManager.requestAlwaysAuthorization()
+        localSpotView.clipsToBounds = true
+        
+        learnMoreBut.addTarget(self, action: #selector(self.learnMoreAction(_:)), for: .touchUpInside)
         
         if CLLocationManager.locationServicesEnabled(){
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.startMonitoringSignificantLocationChanges()
         }
-        
+
         Auth.auth().addStateDidChangeListener { (auth, user) in
             let hashedData: NSData = Hash.sha256(data: user!.email!.data(using: String.Encoding.utf8)! as NSData)
             let hashedEmail: String = Hash.hexStringFromData(input: Hash.sha256(data: hashedData))
@@ -59,24 +103,9 @@ class ViewController2: UIViewController, CLLocationManagerDelegate, UIImagePicke
         }
     }
     
-//    func sha256(data : NSData) -> NSData {
-//        var hash = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
-//        CC_SHA256(data.bytes, CC_LONG(data.length), &hash)
-//        let res = NSData(bytes: hash, length: Int(CC_SHA256_DIGEST_LENGTH))
-//        return res
-//    }
-//    
-//    private func hexStringFromData(input: NSData) -> String {
-//        var bytes = [UInt8](repeating: 0, count: input.length)
-//        input.getBytes(&bytes, length: input.length)
-//        var hexString = ""
-//
-//        for byte in bytes {
-//            hexString += String(format:"%02x", UInt8(byte))
-//        }
-//
-//        return hexString
-//    }
+    @IBAction func learnMoreAction(_ sender: Any) {
+        UIApplication.shared.open(URL(string: myUrl )!, options: [:], completionHandler: nil)
+    }
     
     @IBAction func addPic(_ sender: UIButton) {
         let imagePickerController = UIImagePickerController()
@@ -139,6 +168,52 @@ class ViewController2: UIViewController, CLLocationManagerDelegate, UIImagePicke
             
         }
         
+        if flag == false {
+            flag = true
+            guard let url = URL(string:self.domain+"Food"+self.locationParam) else { return }
+            var request = URLRequest(url:url)
+            request.httpMethod = "GET"
+            request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+            request.addValue("Bearer -Cfy-cCnWTY1HVJAb6ISQcj5bS3Q4R8tNZn7nM0u98lemdk5jos9H8Wvce5ZdQbAG7fCVwZ_aOXtvf7ynjcMwH41TKIbghjFb5_E9DHevRGpX8TZOoA-WobdOVb3WXYx", forHTTPHeaderField: "Authorization")
+            let session = URLSession.shared
+            session.dataTask(with: request) { (data, response, err) in
+                if let response = response {
+                    print(response)
+                }
+                guard let data = data else { return }
+                do {
+                    let poi = try JSONDecoder().decode(POI.self, from:data)
+                    let name = poi.businesses[0].name
+                    self.localSpotLabel.text = name
+                    let dist: String = String(format: "%.1f", poi.businesses[0].distance!/1609.344)
+                    self.localSpotDistLabel.text = dist+" mi"
+                    self.localSpotPriceLabel.text = poi.businesses[0].price
+                    let picUrl = URL(string: poi.businesses[0].image_url!)
+                    self.myUrl = poi.businesses[0].url!
+                    let task = URLSession.shared.dataTask(with: picUrl!, completionHandler: { (data, response, error) in
+                        if error != nil {
+                            print("Error")
+                        }
+                        else {
+                            var documentsDirectory:String?
+                            var paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+                            if paths.count > 0 {
+                                documentsDirectory = paths[0]
+                                let savePath = documentsDirectory! + "/picLocalSpot"
+                                FileManager.default.createFile(atPath: savePath, contents: data, attributes: nil)
+                                DispatchQueue.main.async {
+                                    self.localSpotView.image = UIImage(named: savePath)
+                                }
+                            }
+                        }
+                    })
+                    task.resume()
+                } catch let jsonErr {
+                    print("Error serializing json:", jsonErr)
+                }
+                }.resume()
+            
+        }
         self.getNotificationFrequency { (snapshot) -> () in
             for s in snapshot {
                 if s.key == "notificationFreq" {

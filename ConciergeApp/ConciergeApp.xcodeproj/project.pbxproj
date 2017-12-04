@@ -11,8 +11,6 @@
 		97EDDC400CF9AEA3BB7DFAB2 /* Pods_ConciergeAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39259406354190CAD8C563CD /* Pods_ConciergeAppTests.framework */; };
 		B20789841FB0DB7B009FE5C3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B20789831FB0DB7B009FE5C3 /* CoreLocation.framework */; };
 		B22B0DB31FCE586800B1D755 /* PreferencesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22B0DB21FCE586700B1D755 /* PreferencesTableViewController.swift */; };
-		B23182A91FBC91D400A19F32 /* NavHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23182A81FBC91D400A19F32 /* NavHomeController.swift */; };
-		B25020D11FBF556000B2BF04 /* GenerateFusionCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25020D01FBF556000B2BF04 /* GenerateFusionCall.swift */; };
 		B26AA0D51FA22F1B00176D9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26AA0D41FA22F1B00176D9C /* AppDelegate.swift */; };
 		B26AA0D71FA22F1B00176D9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26AA0D61FA22F1B00176D9C /* ViewController.swift */; };
 		B26AA0DA1FA22F1B00176D9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B26AA0D81FA22F1B00176D9C /* Main.storyboard */; };
@@ -24,10 +22,8 @@
 		B2A214F11FCB363A0080321D /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A214F01FCB363A0080321D /* OptionsViewController.swift */; };
 		B2A214F31FCB42670080321D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A214F21FCB42670080321D /* RegisterViewController.swift */; };
 		B2F326C01FCDC3020036A8D7 /* Fusion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F326BF1FCDC3020036A8D7 /* Fusion.swift */; };
-		B2F326C21FCDCB2B0036A8D7 /* PrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F326C11FCDCB2B0036A8D7 /* PrefsViewController.swift */; };
 		EF5A8B701FA274130038F8A4 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A8B6F1FA274130038F8A4 /* ViewController2.swift */; };
 		EF80ECE41FCF35A4005C4DB1 /* Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF80ECE31FCF35A4005C4DB1 /* Hash.swift */; };
-		EF8EED511FC35921008477CF /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8EED501FC35921008477CF /* TableViewController.swift */; };
 		F97C062E0756F14576DEA7D4 /* Pods_ConciergeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A32F09209DF020B65BE3EF7 /* Pods_ConciergeApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,9 +55,7 @@
 		AE747EB8F22253D50736B0B1 /* Pods_ConciergeAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConciergeAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B20789831FB0DB7B009FE5C3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B22B0DB21FCE586700B1D755 /* PreferencesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesTableViewController.swift; sourceTree = "<group>"; };
-		B23182A81FBC91D400A19F32 /* NavHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavHomeController.swift; sourceTree = "<group>"; };
 		B23F2BE71FB9D5FB007D8C03 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
-		B25020D01FBF556000B2BF04 /* GenerateFusionCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateFusionCall.swift; sourceTree = "<group>"; };
 		B26AA0D11FA22F1B00176D9C /* ConciergeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConciergeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B26AA0D41FA22F1B00176D9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B26AA0D61FA22F1B00176D9C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,11 +73,9 @@
 		B2A214F01FCB363A0080321D /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		B2A214F21FCB42670080321D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B2F326BF1FCDC3020036A8D7 /* Fusion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fusion.swift; sourceTree = "<group>"; };
-		B2F326C11FCDCB2B0036A8D7 /* PrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsViewController.swift; sourceTree = "<group>"; };
 		C868DBCB3E3E105A4CEE4FE4 /* Pods-ConciergeAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConciergeAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConciergeAppUITests/Pods-ConciergeAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EF5A8B6F1FA274130038F8A4 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		EF80ECE31FCF35A4005C4DB1 /* Hash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hash.swift; sourceTree = "<group>"; };
-		EF8EED501FC35921008477CF /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,23 +156,19 @@
 		B26AA0D31FA22F1B00176D9C /* ConciergeApp */ = {
 			isa = PBXGroup;
 			children = (
-				EF8EED501FC35921008477CF /* TableViewController.swift */,
 				B26AA0D41FA22F1B00176D9C /* AppDelegate.swift */,
 				B26AA0D61FA22F1B00176D9C /* ViewController.swift */,
 				B23F2BE71FB9D5FB007D8C03 /* BridgingHeader.h */,
 				EF5A8B6F1FA274130038F8A4 /* ViewController2.swift */,
 				B2F326BF1FCDC3020036A8D7 /* Fusion.swift */,
-				B23182A81FBC91D400A19F32 /* NavHomeController.swift */,
 				B26AA0D81FA22F1B00176D9C /* Main.storyboard */,
 				B22B0DB21FCE586700B1D755 /* PreferencesTableViewController.swift */,
-				B2F326C11FCDCB2B0036A8D7 /* PrefsViewController.swift */,
 				B2A214F21FCB42670080321D /* RegisterViewController.swift */,
 				B2A214F01FCB363A0080321D /* OptionsViewController.swift */,
 				B26AA0DB1FA22F1B00176D9C /* Assets.xcassets */,
 				B26AA0DD1FA22F1B00176D9C /* LaunchScreen.storyboard */,
 				B26AA1021FA231E700176D9C /* GoogleService-Info.plist */,
 				B26AA0E01FA22F1B00176D9C /* Info.plist */,
-				B25020D01FBF556000B2BF04 /* GenerateFusionCall.swift */,
 				EF80ECE31FCF35A4005C4DB1 /* Hash.swift */,
 			);
 			path = ConciergeApp;
@@ -513,13 +501,9 @@
 				B2F326C01FCDC3020036A8D7 /* Fusion.swift in Sources */,
 				EF80ECE41FCF35A4005C4DB1 /* Hash.swift in Sources */,
 				B26AA0D71FA22F1B00176D9C /* ViewController.swift in Sources */,
-				EF8EED511FC35921008477CF /* TableViewController.swift in Sources */,
-				B23182A91FBC91D400A19F32 /* NavHomeController.swift in Sources */,
-				B25020D11FBF556000B2BF04 /* GenerateFusionCall.swift in Sources */,
 				B2A214F31FCB42670080321D /* RegisterViewController.swift in Sources */,
 				B2A214F11FCB363A0080321D /* OptionsViewController.swift in Sources */,
 				B22B0DB31FCE586800B1D755 /* PreferencesTableViewController.swift in Sources */,
-				B2F326C21FCDCB2B0036A8D7 /* PrefsViewController.swift in Sources */,
 				B26AA0D51FA22F1B00176D9C /* AppDelegate.swift in Sources */,
 				EF5A8B701FA274130038F8A4 /* ViewController2.swift in Sources */,
 			);

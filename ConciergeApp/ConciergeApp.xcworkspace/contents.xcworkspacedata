@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Volumes/Samsung USB/EC601/Concierge/ConciergeApp/ConciergeApp/TableViewController.swift">
-   </FileRef>
-   <FileRef
       location = "group:/Users/conradliu/Github/Concierge/ConciergeApp/ConciergeApp/ViewController2.swift">
    </FileRef>
    <FileRef
