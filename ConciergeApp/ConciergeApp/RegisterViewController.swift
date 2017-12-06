@@ -61,6 +61,7 @@ class RegisterViewController: UIViewController {
         ref.child("users").child(hashedEmail).child("account").child("lastName").setValue(lName.text)
         ref.child("users").child(hashedEmail).child("account").child("userName").setValue(userName.text)
         ref.child("users").child(hashedEmail).child("profile").child("notificationFreq").setValue(Double(5))
+        ref.child("users").child(hashedEmail).child("profile").child("radius").setValue(Double(1))
         
     }
     

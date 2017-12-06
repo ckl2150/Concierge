@@ -42,12 +42,15 @@ public class Fusion {
         var correct: Bool = true
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in})
+        self.getRadius{(radiusParam) -> () in
+            
         
         self.getParam { (catParam) -> () in
+           
             let ptvc = PreferencesTableViewController()
             if ptvc.correctCaller || correct {
                 correct = false
-                guard let url = URL(string:self.domain+"Food&categories="+catParam+locationParam) else { return }
+                guard let url = URL(string:self.domain+"Food&radius="+radiusParam+"&categories="+catParam+locationParam) else { return }
                 var request = URLRequest(url:url)
                 request.httpMethod = "GET"
                 request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
@@ -62,14 +65,16 @@ public class Fusion {
                         let poi = try JSONDecoder().decode(POI.self, from:data)
                         
                         let Content = UNMutableNotificationContent()
-                        let dist: String = String(format: "%.1f", poi.businesses[0].distance!/1609.344)
-                        Content.title = "Feeling hungry?"
-                        Content.body = poi.businesses[0].name! + " is "+dist+" miles away, want to check it out?"
-                        Content.badge = 1
+                        if poi.businesses.isEmpty == false {
+                            let dist: String = String(format: "%.1f", poi.businesses[0].distance!/1609.344)
+                            Content.title = "Feeling hungry?"
+                            Content.body = poi.businesses[0].name! + " is "+dist+" miles away, want to check it out?"
+                            Content.badge = 1
 
-                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-                        let request = UNNotificationRequest.init(identifier: "poiFound", content: Content, trigger: trigger)
-                        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+                            let request = UNNotificationRequest.init(identifier: "poiFound", content: Content, trigger: trigger)
+                            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                        }
 
                     } catch let jsonErr {
                         print("Error serializing json:", jsonErr)
@@ -77,7 +82,8 @@ public class Fusion {
                 }.resume()
             }
         }
-    
+            
+        }
     }
     
     func getParam(completion: @escaping (String) -> ()) {
@@ -100,6 +106,23 @@ public class Fusion {
             })
         }
     }
-
+    
+    func getRadius(completion: @escaping (String) -> ()) {
+        var radiusParam: String = ""
+        if let user = Auth.auth().currentUser {
+            let hashedData: NSData = Hash.sha256(data: user.email!.data(using: String.Encoding.utf8)! as NSData)
+            let hashedEmail: String = Hash.hexStringFromData(input: Hash.sha256(data: hashedData))
+            _ = self.ref.child("users").child(hashedEmail).child("profile").ref.observe( .value, with: { (snapshot) -> Void in
+                if snapshot.exists() {
+                    for snap in snapshot.children.allObjects as! [DataSnapshot] {
+                        if snap.key == "radius" {
+                            let radius: Int = Int((snap.value as! Double) * 1609.344)
+                            radiusParam = String(radius)
+                        }
+                    }                }
+                completion(radiusParam)
+            })
+        }
+    }
 }
 
