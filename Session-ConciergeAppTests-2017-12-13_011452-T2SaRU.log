@@ -1,0 +1,326 @@
+01:14:52.159 Xcode[87419:12965461] Beginning test session ConciergeAppTests-9E8FC533-46B4-4449-9208-21FB84B2AE50 at 2017-12-13 01:14:52.159 with Xcode 9A1004 on target <DVTiPhoneSimulator: 0x7f7f1bf63000> {
+		SimDevice: iPhone 8 (CA119EAA-0987-4E79-ACB7-5519180FE13A, iOS 11.0, Booted)
+} (11.0.1 (15A8401))
+01:14:52.159 Xcode[87419:12965461] Launching with Xcode.DebuggerFoundation.Launcher.LLDB
+01:14:52.160 Xcode[87419:12965461] Test standard output and standard error is at /var/folders/lg/ypfkqmbj36b3q_qvyjtqb3zr0000gn/T/com.apple.dt.XCTest/IDETestRunSession-E1759D68-E57D-4EB0-82FA-58C41C8838C9/ConciergeAppTests-E1E1D24D-0F2B-4CEE-AF16-34C4914FB0FC/StandardOutputAndStandardError.txt
+01:14:57.236 Xcode[87419:12965461] Launch session started.
+01:14:57.270 Xcode[87419:12965461] Setting up test runner session
+01:14:57.271 Xcode[87419:13183371] Sim iPhone 8: Unregistering for sim device notification with token 56
+01:14:57.271 Xcode[87419:13183371] Calling -[SimDevice getenv:error:] for TESTMANAGERD_SIM_SOCK
+01:14:57.275 Xcode[87419:13183371] Sim iPhone 8 has testmanagerd socket at /private/tmp/com.apple.launchd.lbvMBejO3p/com.apple.testmanagerd.unix-domain.socket
+01:14:57.275 Xcode[87419:13183371] Validating test connection socket path (/private/tmp/com.apple.launchd.lbvMBejO3p/com.apple.testmanagerd.unix-domain.socket)
+01:14:57.275 Xcode[87419:13183371] Constructing transport for test connection socket
+01:14:57.275 Xcode[87419:13183371] Connected socket 76 to testmanagerd for Sim iPhone 8
+01:14:57.276 Xcode[87419:13183372] Received connection for test runner session
+01:14:57.276 Xcode[87419:13183372] Listening for proxy connection request from the test bundle
+01:14:57.277 Xcode[87419:13183372] Initiating session with identifier: 9E8FC533-46B4-4449-9208-21FB84B2AE50
+01:14:57.300 Xcode[87419:12965461] Test runner session acquired connection.
+01:14:57.300 Xcode[87419:12965461] Waiting for test process to launch.
+01:14:57.342 Xcode[87419:12965461] Received Ready from iOSSimulator
+01:14:57.342 Xcode[87419:12965461] Sending notification: NSConcreteNotification 0x7f7f099d89b0 {name = com.apple.iphonesimulator.startSession; userInfo = {
+    deviceUDID = "CA119EAA-0987-4E79-ACB7-5519180FE13A";
+}}
+01:14:57.343 Xcode[87419:13182942] Launch session LaunchSessionClaim_0x7f7f0aaf9890 claimed simulator CA119EAA-0987-4E79-ACB7-5519180FE13A
+01:14:57.347 Xcode[87419:12965461] Adding console adaptor <IDEConsoleAdaptor: 0x7f7f077b0040 'target' stdin: <IDEMasterPtyFileHandle: 0x7f7f0a8564c0 MasterFH: <NSConcreteFileHandle: 0x7f7f0a84d5b0> 31 SlaveFH: <NSConcreteFileHandle: 0x7f7f07713ce0> 78> 31 stdout: <IDEMasterPtyFileHandle: 0x7f7f0a8564c0 MasterFH: <NSConcreteFileHandle: 0x7f7f0a84d5b0> 31 SlaveFH: <NSConcreteFileHandle: 0x7f7f07713ce0> 78> 31 stderr: (null) 0> for test session 9E8FC533-46B4-4449-9208-21FB84B2AE50.
+01:14:57.389 Xcode[87419:12965461] Received Ready from iOSSimulator
+01:14:57.389 Xcode[87419:12965461] Sending notification: NSConcreteNotification 0x7f7f099f4ad0 {name = com.apple.iphonesimulator.startSession; userInfo = {
+    deviceUDID = "CA119EAA-0987-4E79-ACB7-5519180FE13A";
+}}
+01:14:57.390 Xcode[87419:13183372] Launch session LaunchSessionClaim_0x7f7f0aaf9890 claimed simulator CA119EAA-0987-4E79-ACB7-5519180FE13A
+01:14:57.390 Xcode[87419:13183372] CA119EAA-0987-4E79-ACB7-5519180FE13A: Registered for sim device notification, got token 57
+01:14:57.390 Xcode[87419:13182939] CA119EAA-0987-4E79-ACB7-5519180FE13A: Unregistering for sim device notification with token 57
+01:14:57.391 Xcode[87419:13182942] CA119EAA-0987-4E79-ACB7-5519180FE13A: Installing app at path: /Users/conradliu/Library/Developer/Xcode/DerivedData/ConciergeApp-gkwwqnafqbpwxefcnaehqhtjpjuw/Build/Products/Debug-iphonesimulator/ConciergeApp.app and options: {
+    CFBundleIdentifier = "com.Concierge.ConciergeApp";
+}
+01:14:59.156 Xcode[87419:13182942] CA119EAA-0987-4E79-ACB7-5519180FE13A: Installed app at path: /Users/conradliu/Library/Developer/Xcode/DerivedData/ConciergeApp-gkwwqnafqbpwxefcnaehqhtjpjuw/Build/Products/Debug-iphonesimulator/ConciergeApp.app and options: {
+    CFBundleIdentifier = "com.Concierge.ConciergeApp";
+}
+01:14:59.158 Xcode[87419:13182942] CA119EAA-0987-4E79-ACB7-5519180FE13A: Launching app with identifier: com.Concierge.ConciergeApp and options: {
+    arguments =     (
+        "-NSTreatUnknownArgumentsAsOpen",
+        NO,
+        "-ApplePersistenceIgnoreState",
+        YES
+    );
+    environment =     {
+        "DYLD_FRAMEWORK_PATH" = "/Users/conradliu/Library/Developer/Xcode/DerivedData/ConciergeApp-gkwwqnafqbpwxefcnaehqhtjpjuw/Build/Products/Debug-iphonesimulator:/Users/conradliu/Library/Developer/Xcode/DerivedData/ConciergeApp-gkwwqnafqbpwxefcnaehqhtjpjuw/Build/Products/Debug-iphonesimulator:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/Developer/Library/PrivateFrameworks";
+        "DYLD_INSERT_LIBRARIES" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/IDEBundleInjection.framework/IDEBundleInjection:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/lib/libMainThreadChecker.dylib";
+        "DYLD_LIBRARY_PATH" = "/Users/conradliu/Library/Developer/Xcode/DerivedData/ConciergeApp-gkwwqnafqbpwxefcnaehqhtjpjuw/Build/Products/Debug-iphonesimulator:/Users/conradliu/Library/Developer/Xcode/DerivedData/ConciergeApp-gkwwqnafqbpwxefcnaehqhtjpjuw/Build/Products/Debug-iphonesimulator:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/Developer/Library/PrivateFrameworks";
+        "MTC_CRASH_ON_REPORT" = 1;
+        NSUnbufferedIO = YES;
+        "OS_ACTIVITY_DT_MODE" = YES;
+        XCInjectBundleInto = "/Users/conradliu/Library/Developer/Xcode/DerivedData/ConciergeApp-gkwwqnafqbpwxefcnaehqhtjpjuw/Build/Products/Debug-iphonesimulator/ConciergeApp.app/ConciergeApp";
+        "XCODE_DBG_XPC_EXCLUSIONS" = "com.apple.dt.xctestSymbolicator";
+        XCTestConfigurationFilePath = "/var/folders/lg/ypfkqmbj36b3q_qvyjtqb3zr0000gn/T/com.apple.dt.XCTest/IDETestRunSession-E1759D68-E57D-4EB0-82FA-58C41C8838C9/ConciergeAppTests-E1E1D24D-0F2B-4CEE-AF16-34C4914FB0FC/LaunchSessions/9E8FC533-46B4-4449-9208-21FB84B2AE50/remote-container/tmp/ConciergeAppTests-9E8FC533-46B4-4449-9208-21FB84B2AE50.xctestconfiguration";
+        "__XCODE_BUILT_PRODUCTS_DIR_PATHS" = "/Users/conradliu/Library/Developer/Xcode/DerivedData/ConciergeApp-gkwwqnafqbpwxefcnaehqhtjpjuw/Build/Products/Debug-iphonesimulator";
+        "__XPC_DYLD_FRAMEWORK_PATH" = "/Users/conradliu/Library/Developer/Xcode/DerivedData/ConciergeApp-gkwwqnafqbpwxefcnaehqhtjpjuw/Build/Products/Debug-iphonesimulator";
+        "__XPC_DYLD_LIBRARY_PATH" = "/Users/conradliu/Library/Developer/Xcode/DerivedData/ConciergeApp-gkwwqnafqbpwxefcnaehqhtjpjuw/Build/Products/Debug-iphonesimulator";
+    };
+    stderr = "/dev/ttys003";
+    stdout = "/dev/ttys003";
+    "wait_for_debugger" = 1;
+}
+01:15:01.455 Xcode[87419:13182942] CA119EAA-0987-4E79-ACB7-5519180FE13A: Launched app with identifier: com.Concierge.ConciergeApp (pid = 90524)
+01:15:01.455 Xcode[87419:13182942] Tracking pid 90524 for simulator <DVTiPhoneSimulator: 0x7f7f1bf63000> {
+		SimDevice: iPhone 8 (CA119EAA-0987-4E79-ACB7-5519180FE13A, iOS 11.0, Booted)
+}
+01:15:01.455 Xcode[87419:13182942] Checking to see if pid 90524 is valid: kill(pid, 0) = 0 (YES, it's still running)
+01:15:01.455 Xcode[87419:13182942] Setting up DVTTaskNotifyOnProcDeath for pid 90524
+01:15:01.455 Xcode[87419:12965461] Test process runnable PID is 90524.
+01:15:02.352 Xcode[87419:12965461] Waiting for test process to check in..., will wait up to 120s
+01:15:02.637 Xcode[87419:13182930] Got reply to session initiation request with identifier 9E8FC533-46B4-4449-9208-21FB84B2AE50 (result:error): 25: (null)
+01:15:03.487 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 133 bytes written out to StandardOutputAndStandardError
+01:15:03.488 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 212 bytes written out to StandardOutputAndStandardError
+01:15:03.597 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 0 bytes written out to StandardOutputAndStandardError
+01:15:03.705 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 117 bytes written out to StandardOutputAndStandardError
+01:15:03.705 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 102 bytes written out to StandardOutputAndStandardError
+01:15:03.711 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 318 bytes written out to StandardOutputAndStandardError
+01:15:03.744 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 188 bytes written out to StandardOutputAndStandardError
+01:15:03.845 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 0 bytes written out to StandardOutputAndStandardError
+01:15:03.913 Xcode[87419:13183372] Handling proxy channel request from test runner
+01:15:03.914 Xcode[87419:13183372] Test runner is ready, running protocol 25, requires at least version 8. Control framework is running 25 and requires at least 8
+01:15:03.914 Xcode[87419:12965461] Test runner session successfully initiated.
+01:15:03.914 Xcode[87419:12965461] Creating the daemon control session.
+01:15:03.914 Xcode[87419:12965461] Whitelisting test process ID 90524
+01:15:03.914 Xcode[87419:13183372] Sim iPhone 8: Unregistering for sim device notification with token 58
+01:15:03.914 Xcode[87419:12965461] Got authorization request for pid 90524
+01:15:03.914 Xcode[87419:13183372] Calling -[SimDevice getenv:error:] for TESTMANAGERD_SIM_SOCK
+01:15:03.914 Xcode[87419:13183372] Sim iPhone 8 has testmanagerd socket at /private/tmp/com.apple.launchd.lbvMBejO3p/com.apple.testmanagerd.unix-domain.socket
+01:15:03.915 Xcode[87419:13183372] Validating test connection socket path (/private/tmp/com.apple.launchd.lbvMBejO3p/com.apple.testmanagerd.unix-domain.socket)
+01:15:03.915 Xcode[87419:13183372] Constructing transport for test connection socket
+01:15:03.915 Xcode[87419:13183372] Connected socket 83 to testmanagerd for Sim iPhone 8
+01:15:03.915 Xcode[87419:13182930] Requesting authorization for pid 90524
+01:15:03.988 Xcode[87419:13182942] Got reply to authorization request for pid 90524 (result:error): 25: (null)
+01:15:03.988 Xcode[87419:12965461] Got whitelisting response from test daemon. Success: 1
+01:15:03.988 Xcode[87419:12965461] Registering/updating daemon-based crash report observer for process names (
+    XCTRunner,
+    ConciergeApp,
+    xctest
+), report directories: (
+    "/Users/conradliu/Library/Logs/DiagnosticReports",
+    "/Library/Logs/DiagnosticReports"
+).
+01:15:03.990 testmanagerd[90522:13183611] Received request to collect crash reports in directories '/Users/conradliu/Library/Logs/DiagnosticReports', '/Library/Logs/DiagnosticReports' for processes with names 'XCTRunner', 'ConciergeApp', 'xctest'
+01:15:04.003 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 188 bytes written out to StandardOutputAndStandardError
+01:15:03.991 testmanagerd[90522:13183611] Initializing crash report observer for /Users/conradliu/Library/Logs/DiagnosticReports
+01:15:03.993 testmanagerd[90522:13183611] Getting files in /Users/conradliu/Library/Logs/DiagnosticReports
+01:15:03.994 testmanagerd[90522:13183611] Found 48 files in /Users/conradliu/Library/Logs/DiagnosticReports
+01:15:03.994 testmanagerd[90522:13183611] Started monitoring /Users/conradliu/Library/Logs/DiagnosticReports
+01:15:03.994 testmanagerd[90522:13183611] Initializing crash report observer for /Library/Logs/DiagnosticReports
+01:15:03.994 testmanagerd[90522:13183611] Getting files in /Library/Logs/DiagnosticReports
+01:15:03.994 testmanagerd[90522:13183611] Found 59 files in /Library/Logs/DiagnosticReports
+01:15:04.027 Xcode[87419:12965461] Telling test runner to start executing tests.
+01:15:03.994 testmanagerd[90522:13183611] Started monitoring /Library/Logs/DiagnosticReports
+01:15:03.854 ConciergeApp[90524:13183693] Linked XCTest.framework from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/XCTest, built with Xcode 0900(9A221a), modified on Tuesday, October 10, 2017 at 5:44:50 PM Eastern Daylight Time
+XCTest.framework bundle version: 13201
+01:15:03.855 ConciergeApp[90524:13183693] System uptime: 1:25:18
+01:15:03.855 ConciergeApp[90524:13183693] Process arguments: (
+    "/Users/conradliu/Library/Developer/CoreSimulator/Devices/CA119EAA-0987-4E79-ACB7-5519180FE13A/data/Containers/Bundle/Application/2CFCBD29-D2D0-4D58-888E-4FFEF9B68024/ConciergeApp.app/ConciergeApp",
+    "-NSTreatUnknownArgumentsAsOpen",
+    NO,
+    "-ApplePersistenceIgnoreState",
+    YES
+)
+01:15:03.856 ConciergeApp[90524:13183693] Process environment: {
+    "CFFIXED_USER_HOME" = "/Users/conradliu/Library/Developer/CoreSimulator/Devices/CA119EAA-0987-4E79-ACB7-5519180FE13A/data/Containers/Data/Application/79AA11BB-CCB9-4DFB-A92E-09464C596E3C";
+    CLASSIC = 0;
+    "CUPS_SERVER" = "/private/tmp/com.apple.launchd.PIxTjYmUNo/Listeners";
+    "DYLD_FALLBACK_FRAMEWORK_PATH" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks";
+    "DYLD_FALLBACK_LIBRARY_PATH" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/lib";
+    "DYLD_FRAMEWORK_PATH" = "/Users/conradliu/Library/Developer/Xcode/DerivedData/ConciergeApp-gkwwqnafqbpwxefcnaehqhtjpjuw/Build/Products/Debug-iphonesimulator:/Users/conradliu/Library/Developer/Xcode/DerivedData/ConciergeApp-gkwwqnafqbpwxefcnaehqhtjpjuw/Build/Products/Debug-iphonesimulator:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/Developer/Library/PrivateFrameworks";
+    "DYLD_LIBRARY_PATH" = "/Users/conradliu/Library/Developer/Xcode/DerivedData/ConciergeApp-gkwwqnafqbpwxefcnaehqhtjpjuw/Build/Products/Debug-iphonesimulator:/Users/conradliu/Library/Developer/Xcode/DerivedData/ConciergeApp-gkwwqnafqbpwxefcnaehqhtjpjuw/Build/Products/Debug-iphonesimulator:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/Developer/Library/PrivateFrameworks";
+    "DYLD_ROOT_PATH" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot";
+    HOME = "/Users/conradliu/Library/Developer/CoreSimulator/Devices/CA119EAA-0987-4E79-ACB7-5519180FE13A/data/Containers/Data/Application/79AA11BB-CCB9-4DFB-A92E-09464C596E3C";
+    "IOS_SIMULATOR_SYSLOG_SOCKET" = "/private/tmp/com.apple.CoreSimulator.SimDevice.CA119EAA-0987-4E79-ACB7-5519180FE13A/syslogsock";
+    "IPHONE_SHARED_RESOURCES_DIRECTORY" = "/Users/conradliu/Library/Developer/CoreSimulator/Devices/CA119EAA-0987-4E79-ACB7-5519180FE13A/data";
+    "IPHONE_SIMULATOR_ROOT" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot";
+    "IPHONE_TVOUT_EXTENDED_PROPERTIES" = "/Users/conradliu/Library/Developer/CoreSimulator/Devices/CA119EAA-0987-4E79-ACB7-5519180FE13A/data/Library/Application Support/Simulator/extended_display.plist";
+    "MTC_CRASH_ON_REPORT" = 1;
+    NSUnbufferedIO = YES;
+    "OS_ACTIVITY_DT_MODE" = YES;
+    PATH = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/sbin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/sbin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/local/bin";
+    "SIMULATOR_AUDIO_DEVICES_PLIST_PATH" = "/Users/conradliu/Library/Developer/CoreSimulator/Devices/CA119EAA-0987-4E79-ACB7-5519180FE13A/data/var/run/com.apple.coresimulator.audio.plist";
+    "SIMULATOR_AUDIO_SETTINGS_PATH" = "/Users/conradliu/Library/Developer/CoreSimulator/Devices/CA119EAA-0987-4E79-ACB7-5519180FE13A/data/var/run/simulatoraudio/audiosettings.plist";
+    "SIMULATOR_BOOT_TIME" = 1513140585;
+    "SIMULATOR_CAPABILITIES" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/DeviceTypes/iPhone 8.simdevicetype/Contents/Resources/capabilities.plist";
+    "SIMULATOR_DEVICE_NAME" = "iPhone 8";
+    "SIMULATOR_EXTENDED_DISPLAY_PROPERTIES" = "/Users/conradliu/Library/Developer/CoreSimulator/Devices/CA119EAA-0987-4E79-ACB7-5519180FE13A/data/Library/Application Support/Simulator/extended_display.plist";
+    "SIMULATOR_HID_SYSTEM_MANAGER" = "/Library/Developer/PrivateFrameworks/CoreSimulator.framework/Resources/Platforms/iphoneos/Library/Frameworks/SimulatorHID.framework";
+    "SIMULATOR_HOST_HOME" = "/Users/conradliu";
+    "SIMULATOR_LEGACY_ASSET_SUFFIX" = iphone;
+    "SIMULATOR_LOG_ROOT" = "/Users/conradliu/Library/Logs/CoreSimulator/CA119EAA-0987-4E79-ACB7-5519180FE13A";
+    "SIMULATOR_MAINSCREEN_HEIGHT" = 1334;
+    "SIMULATOR_MAINSCREEN_PITCH" = "326.000000";
+    "SIMULATOR_MAINSCREEN_SCALE" = "2.000000";
+    "SIMULATOR_MAINSCREEN_WIDTH" = 750;
+    "SIMULATOR_MEMORY_WARNINGS" = "/Users/conradliu/Library/Developer/CoreSimulator/Devices/CA119EAA-0987-4E79-ACB7-5519180FE13A/data/var/run/memory_warning_simulation";
+    "SIMULATOR_MODEL_IDENTIFIER" = "iPhone10,4";
+    "SIMULATOR_PRODUCT_CLASS" = D20;
+    "SIMULATOR_ROOT" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot";
+    "SIMULATOR_RUNTIME_BUILD_VERSION" = 15A8401;
+    "SIMULATOR_RUNTIME_VERSION" = "11.0.1";
+    "SIMULATOR_SHARED_RESOURCES_DIRECTORY" = "/Users/conradliu/Library/Developer/CoreSimulator/Devices/CA119EAA-0987-4E79-ACB7-5519180FE13A/data";
+    "SIMULATOR_UDID" = "CA119EAA-0987-4E79-ACB7-5519180FE13A";
+    "SIMULATOR_VERSION_INFO" = "CoreSimulator 494.22.3 - Device: iPhone 8 - Runtime: iOS 11.0 (15A8401) - DeviceType: iPhone 8";
+    "TESTMANAGERD_SIM_SOCK" = "/private/tmp/com.apple.launchd.lbvMBejO3p/com.apple.testmanagerd.unix-domain.socket";
+    TMPDIR = "/Users/conradliu/Library/Developer/CoreSimulator/Devices/CA119EAA-0987-4E79-ACB7-5519180FE13A/data/Containers/Data/Application/79AA11BB-CCB9-4DFB-A92E-09464C596E3C/tmp";
+    XCInjectBundleInto = "/Users/conradliu/Library/Developer/Xcode/DerivedData/ConciergeApp-gkwwqnafqbpwxefcnaehqhtjpjuw/Build/Products/Debug-iphonesimulator/ConciergeApp.app/ConciergeApp";
+    "XCODE_DBG_XPC_EXCLUSIONS" = "com.apple.dt.xctestSymbolicator";
+    XCTestConfigurationFilePath = "/var/folders/lg/ypfkqmbj36b3q_qvyjtqb3zr0000gn/T/com.apple.dt.XCTest/IDETestRunSession-E1759D68-E57D-4EB0-82FA-58C41C8838C9/ConciergeAppTests-E1E1D24D-0F2B-4CEE-AF16-34C4914FB0FC/LaunchSessions/9E8FC533-46B4-4449-9208-21FB84B2AE50/remote-container/tmp/ConciergeAppTests-9E8FC533-46B4-4449-9208-21FB84B2AE50.xctestconfiguration";
+    "XPC_FLAGS" = 0x0;
+    "XPC_SERVICE_NAME" = "UIKitApplication:com.Concierge.ConciergeApp[0x430][87500]";
+    "XPC_SIMULATOR_LAUNCHD_NAME" = "com.apple.CoreSimulator.SimDevice.CA119EAA-0987-4E79-ACB7-5519180FE13A";
+    "__XCODE_BUILT_PRODUCTS_DIR_PATHS" = "/Users/conradliu/Library/Developer/Xcode/DerivedData/ConciergeApp-gkwwqnafqbpwxefcnaehqhtjpjuw/Build/Products/Debug-iphonesimulator";
+    "__XPC_DYLD_FRAMEWORK_PATH" = "/Users/conradliu/Library/Developer/Xcode/DerivedData/ConciergeApp-gkwwqnafqbpwxefcnaehqhtjpjuw/Build/Products/Debug-iphonesimulator";
+    "__XPC_DYLD_LIBRARY_PATH" = "/Users/conradliu/Library/Developer/Xcode/DerivedData/ConciergeApp-gkwwqnafqbpwxefcnaehqhtjpjuw/Build/Products/Debug-iphonesimulator";
+}
+01:15:03.856 ConciergeApp[90524:13183693] App Sandbox active: NO
+01:15:03.856 ConciergeApp[90524:13183693] Loading test bundle at: file:///Users/conradliu/Library/Developer/Xcode/DerivedData/ConciergeApp-gkwwqnafqbpwxefcnaehqhtjpjuw/Build/Products/Debug-iphonesimulator/ConciergeApp.app/PlugIns/ConciergeAppTests.xctest/
+01:15:03.856 ConciergeApp[90524:13183693] Finished loading test bundle
+01:15:03.857 ConciergeApp[90524:13183693] Readying IDE session
+01:15:03.858 ConciergeApp[90524:13183693] <XCTWaiter: 0x60000001fd70, state: XCTWaiterStateInProgress> entering wait loop for 5.00s with expectations: (
+    "Exchange protocol versions with daemon"
+)
+01:15:03.879 ConciergeApp[90524:13183879] Got daemon protocol version 18
+01:15:03.880 ConciergeApp[90524:13183874] <XCTWaiter: 0x60000001fd70, state: XCTWaiterStateSucceeded>: cancelWaiting
+01:15:03.882 ConciergeApp[90524:13183693] <XCTWaiter: 0x60000001fd70, state: XCTWaiterStateSucceeded> done waiting
+01:15:03.883 ConciergeApp[90524:13183693] <XCTWaiter: 0x60000001fd70, state: XCTWaiterStateSucceeded> cleaning up Exchange protocol versions with daemon
+01:15:03.886 ConciergeApp[90524:13183693] Requesting IDE connection transport
+01:15:03.889 ConciergeApp[90524:13183879] Creating transport with received transport data
+01:15:03.890 ConciergeApp[90524:13183693] <XCTWaiter: 0x604000209010, state: XCTWaiterStateInProgress> entering wait loop for 60.00s with expectations: (
+    "Transport for IDE session acquired"
+)
+01:15:03.893 ConciergeApp[90524:13183693] <XCTWaiter: 0x604000209010, state: XCTWaiterStateSucceeded> done waiting
+01:15:03.897 ConciergeApp[90524:13183693] <XCTWaiter: 0x604000209010, state: XCTWaiterStateSucceeded> cleaning up Transport for IDE session acquired
+01:15:03.902 ConciergeApp[90524:13183693] Creating connection with transport <DTXFileDescriptorTransport: 0x6040000ef080>
+01:15:03.908 ConciergeApp[90524:13183693] Creating the proxy channel with connection <DTXConnection 0x6000001fad00 : x1>
+01:15:03.912 ConciergeApp[90524:13183693] Messaging IDE proxy - _XCT_testBundleReadyWithProtocolVersion:25 minimumVersion:8
+01:15:03.914 ConciergeApp[90524:13183879] _XCT_testBundleReadyWithProtocolVersion:minimumVersion: reply received
+01:15:03.919 ConciergeApp[90524:13183693] <XCTWaiter: 0x6040002090f0, state: XCTWaiterStateInProgress> entering wait loop for 60.00s with expectations: (
+    "IDE session ready for test plan"
+)
+01:15:04.028 ConciergeApp[90524:13183879] _IDE_startExecutingTestPlanWithProtocolVersion:25
+01:15:04.029 ConciergeApp[90524:13183879] <XCTWaiter: 0x6040002090f0, state: XCTWaiterStateSucceeded>: cancelWaiting
+01:15:04.029 ConciergeApp[90524:13183693] <XCTWaiter: 0x6040002090f0, state: XCTWaiterStateSucceeded> done waiting
+01:15:04.029 ConciergeApp[90524:13183693] <XCTWaiter: 0x6040002090f0, state: XCTWaiterStateSucceeded> cleaning up IDE session ready for test plan
+01:15:04.034 Xcode[87419:12965461] Starting test plan, clearing initialization timeout timer.
+01:15:04.033 ConciergeApp[90524:13183693] Loading test suite...
+01:15:04.034 ConciergeApp[90524:13183693] Finished loading test suite, took 0.001s
+01:15:04.034 ConciergeApp[90524:13183693] -[XCTRunnerIDESession testBundleWillStart:]
+01:15:04.035 ConciergeApp[90524:13183693] Running suite...
+01:15:04.036 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 63 bytes written out to StandardOutputAndStandardError
+01:15:04.035 ConciergeApp[90524:13183693] -[XCTRunnerIDESession testSuiteWillStart:]
+2017-12-13 01:15:03.486819-0500 ConciergeApp[90524:13183857] [Firebase/Analytics][I-ACS023007] Firebase Analytics v.40004000 started
+2017-12-13 01:15:03.487038-0500 ConciergeApp[90524:13183857] [Firebase/Analytics][I-ACS023008] To enable debug logging set the following application argument: -FIRAnalyticsDebugEnabled (see http://goo.gl/RfcP7r)
+2017-12-13 01:15:03.702911-0500 ConciergeApp[90524:13183693] [MC] Lazy loading NSBundle MobileCoreServices.framework
+2017-12-13 01:15:03.704842-0500 ConciergeApp[90524:13183693] [MC] Loaded MobileCoreServices.framework
+2017-12-13 01:15:03.710034-0500 ConciergeApp[90524:13183693] [MC] System group container for systemgroup.com.apple.configurationprofiles path is /Users/conradliu/Library/Developer/CoreSimulator/Devices/CA119EAA-0987-4E79-ACB7-5519180FE13A/data/Containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles
+2017-12-13 01:15:03.743426-0500 ConciergeApp[90524:13183874] [BoringSSL] Function boringssl_context_get_peer_sct_list: line 1754 received sct extension length is less than sct data length
+2017-12-13 01:15:04.002969-0500 ConciergeApp[90524:13183857] [BoringSSL] Function boringssl_context_get_peer_sct_list: line 1754 received sct extension length is less than sct data length
+Test Suite 'Selected tests' started at 2017-12-13 01:15:04.035
+01:15:04.037 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 73 bytes written out to StandardOutputAndStandardError
+Test Suite 'ConciergeAppTests.xctest' started at 2017-12-13 01:15:04.036
+01:15:04.037 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 66 bytes written out to StandardOutputAndStandardError
+01:15:04.037 Xcode[87419:12965461] _XCT_testSuite:Selected tests didStartAt:2017-12-13 06:15:04 +0000
+01:15:04.038 Xcode[87419:13182930] (LOG ARBITER) Rotating message buffer with 2 messages.
+01:15:04.083 Xcode[87419:13183372] (LOG ARBITER) Dumping buffered message data; 2 messages.
+01:15:04.083 Xcode[87419:13182099] (LOG ARBITER) Dumping buffered message data; 0 messages.
+01:15:04.864 Xcode[87419:13182942] (LOG ARBITER) Dumping buffered message data; 0 messages.
+01:15:05.153 Xcode[87419:13183910] (LOG ARBITER) Dumping buffered message data; 0 messages.
+Test Suite 'ConciergeAppTests' started at 2017-12-13 01:15:04.037
+01:15:04.038 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 73 bytes written out to StandardOutputAndStandardError
+01:15:04.038 Xcode[87419:12965461] _XCT_testSuite:ConciergeAppTests didStartAt:2017-12-13 06:15:04 +0000
+01:15:04.037 ConciergeApp[90524:13183693] -[XCTRunnerIDESession testSuiteWillStart:]
+01:15:04.038 ConciergeApp[90524:13183693] -[XCTRunnerIDESession testCaseWillStart:] ConciergeAppTests.ConciergeAppTests testDatabase
+01:15:04.040 Xcode[87419:12965461] _XCT_testCaseDidStartForTestClass:ConciergeAppTests.ConciergeAppTests method:testDatabase
+Test Case '-[ConciergeAppTests.ConciergeAppTests testDatabase]' started.
+01:15:04.068 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 88 bytes written out to StandardOutputAndStandardError
+01:15:04.067 ConciergeApp[90524:13183693] -[XCTRunnerIDESession testCaseDidFinish:]
+01:15:04.083 Xcode[87419:12965461] _XCT_testCaseDidFinishForTestClass:ConciergeAppTests.ConciergeAppTests method:testDatabase withStatus:passed duration:0.02923798561096191
+01:15:04.068 ConciergeApp[90524:13183693] -[XCTRunnerIDESession testCaseWillStart:] ConciergeAppTests.ConciergeAppTests testFireAuthDelete
+01:15:04.083 Xcode[87419:12965461] _XCT_testCaseDidStartForTestClass:ConciergeAppTests.ConciergeAppTests method:testFireAuthDelete
+01:15:04.083 Xcode[87419:12965461] _XCT_testCaseDidFinishForTestClass:ConciergeAppTests.ConciergeAppTests method:testFireAuthDelete withStatus:passed duration:0.002665996551513672
+01:15:04.071 ConciergeApp[90524:13183693] -[XCTRunnerIDESession testCaseDidFinish:]
+01:15:04.074 ConciergeApp[90524:13183693] -[XCTRunnerIDESession testCaseWillStart:] ConciergeAppTests.ConciergeAppTests testFusionAPI
+01:15:04.083 Xcode[87419:12965461] _XCT_testCaseDidStartForTestClass:ConciergeAppTests.ConciergeAppTests method:testFusionAPI
+01:15:04.079 ConciergeApp[90524:13183693] -[ConciergeAppTests testFusionAPI] starting to wait on 'Status code: 200'
+01:15:04.080 ConciergeApp[90524:13183693] <XCTWaiter: 0x6000002003e0, state: XCTWaiterStateInProgress> entering wait loop for 5.00s with expectations: (
+    "Status code: 200"
+)
+Test Case '-[ConciergeAppTests.ConciergeAppTests testDatabase]' passed (0.029 seconds).
+Test Case '-[ConciergeAppTests.ConciergeAppTests testFireAuthDelete]' started.
+Test Case '-[ConciergeAppTests.ConciergeAppTests testFireAuthDelete]' passed (0.003 seconds).
+01:15:04.083 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 247 bytes written out to StandardOutputAndStandardError
+Test Case '-[ConciergeAppTests.ConciergeAppTests testFusionAPI]' started.
+01:15:04.140 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 91 bytes written out to StandardOutputAndStandardError
+01:15:04.141 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 91 bytes written out to StandardOutputAndStandardError
+01:15:04.255 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 0 bytes written out to StandardOutputAndStandardError
+01:15:04.684 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 56 bytes written out to StandardOutputAndStandardError
+01:15:04.784 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 0 bytes written out to StandardOutputAndStandardError
+01:15:04.861 ConciergeApp[90524:13183877] <XCTWaiter: 0x6000002003e0, state: XCTWaiterStateSucceeded>: cancelWaiting
+01:15:04.862 ConciergeApp[90524:13183693] <XCTWaiter: 0x6000002003e0, state: XCTWaiterStateSucceeded> done waiting
+2017-12-13 01:15:04.138554-0500 ConciergeApp[90524:13183878] TIC Read Status [1:0x0]: 1:57
+2017-12-13 01:15:04.139266-0500 ConciergeApp[90524:13183878] TIC Read Status [1:0x0]: 1:57
+The email address is already in use by another account.
+Test Case '-[ConciergeAppTests.ConciergeAppTests testFusionAPI]' passed (0.788 seconds).
+01:15:04.863 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 172 bytes written out to StandardOutputAndStandardError
+01:15:04.862 ConciergeApp[90524:13183693] <XCTWaiter: 0x6000002003e0, state: XCTWaiterStateSucceeded> cleaning up Status code: 200
+01:15:04.862 ConciergeApp[90524:13183693] -[ConciergeAppTests testFusionAPI] done waiting on 'Status code: 200'
+01:15:04.862 ConciergeApp[90524:13183693] -[XCTRunnerIDESession testCaseDidFinish:]
+01:15:04.864 Xcode[87419:12965461] _XCT_testCaseDidFinishForTestClass:ConciergeAppTests.ConciergeAppTests method:testFusionAPI withStatus:passed duration:0.7883840203285217
+01:15:04.863 ConciergeApp[90524:13183693] -[XCTRunnerIDESession testCaseWillStart:] ConciergeAppTests.ConciergeAppTests testPerformanceExample
+01:15:04.888 Xcode[87419:12965461] _XCT_testCaseDidStartForTestClass:ConciergeAppTests.ConciergeAppTests method:testPerformanceExample
+Test Case '-[ConciergeAppTests.ConciergeAppTests testPerformanceExample]' started.
+01:15:04.966 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 0 bytes written out to StandardOutputAndStandardError
+01:15:05.148 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 588 bytes written out to StandardOutputAndStandardError
+01:15:05.147 ConciergeApp[90524:13183693] -[XCTRunnerIDESession _testCase:didMeasureValues:forPerformanceMetricID:name:unitsOfMeasurement:baselineName:baselineAverage:maxPercentRegression:maxPercentRelativeStandardDeviation:maxRegression:maxStandardDeviation:file:line:]
+/Users/conradliu/Github/Concierge/ConciergeApp/ConciergeAppTests/ConciergeAppTests.swift:149: Test Case '-[ConciergeAppTests.ConciergeAppTests testPerformanceExample]' measured [Time, seconds] average: 0.000, relative standard deviation: 105.434%, values: [0.000004, 0.000002, 0.000001, 0.000000, 0.000001, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000], performanceMetricID:com.apple.XCTPerformanceMetric_WallClockTime, baselineName: "", baselineAverage: , maxPercentRegression: 10.000%, maxPercentRelativeStandardDeviation: 10.000%, maxRegression: 0.100, maxStandardDeviation: 0.100
+01:15:05.149 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 98 bytes written out to StandardOutputAndStandardError
+Test Case '-[ConciergeAppTests.ConciergeAppTests testPerformanceExample]' passed (0.286 seconds).
+01:15:05.150 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 142 bytes written out to StandardOutputAndStandardError
+Test Suite 'ConciergeAppTests' passed at 2017-12-13 01:15:05.150.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 1.106 (1.113) seconds
+01:15:05.151 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 149 bytes written out to StandardOutputAndStandardError
+Test Suite 'ConciergeAppTests.xctest' passed at 2017-12-13 01:15:05.150.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 1.106 (1.114) seconds
+01:15:05.152 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 139 bytes written out to StandardOutputAndStandardError
+01:15:05.152 Xcode[87419:12965461] -[XCTTestRunnerSession _XCT_testMethod:ofClass:didMeasureMetric:file:line:]_block_invoke
+01:15:05.149 ConciergeApp[90524:13183693] -[XCTRunnerIDESession testCaseDidFinish:]
+01:15:05.153 Xcode[87419:12965461] _XCT_testCaseDidFinishForTestClass:ConciergeAppTests.ConciergeAppTests method:testPerformanceExample withStatus:passed duration:0.2859480381011963
+01:15:05.150 ConciergeApp[90524:13183693] -[XCTRunnerIDESession testSuiteDidFinish:]
+01:15:05.199 Xcode[87419:12965461] _XCT_testSuite:ConciergeAppTests didFinishAt:2017-12-13 06:15:05 +0000 runCount:4 withFailures:0 unexpected:0 testDuration:1.106236040592194 totalDuration:1.113013982772827
+01:15:05.150 ConciergeApp[90524:13183693] -[XCTRunnerIDESession testSuiteDidFinish:]
+01:15:05.199 Xcode[87419:12965461] _XCT_testSuite:ConciergeAppTests.xctest didFinishAt:2017-12-13 06:15:05 +0000 runCount:4 withFailures:0 unexpected:0 testDuration:1.106236040592194 totalDuration:1.114175021648407
+01:15:05.151 ConciergeApp[90524:13183693] -[XCTRunnerIDESession testSuiteDidFinish:]
+01:15:05.199 Xcode[87419:12965461] _XCT_testSuite:Selected tests didFinishAt:2017-12-13 06:15:05 +0000 runCount:4 withFailures:0 unexpected:0 testDuration:1.106236040592194 totalDuration:1.115909993648529
+01:15:05.152 ConciergeApp[90524:13183693] Finished running suite.
+01:15:05.152 ConciergeApp[90524:13183693] -[XCTRunnerIDESession testBundleDidFinish:], Flushing connection to IDE...
+01:15:05.199 Xcode[87419:12965461] -[XCTTestRunnerSession _XCT_didFinishExecutingTestPlan]_block_invoke
+01:15:05.152 ConciergeApp[90524:13183693] Calling completion.
+01:15:05.152 ConciergeApp[90524:13183693] <XCTWaiter: 0x600000201290, state: XCTWaiterStateInProgress> entering wait loop for 15.00s with expectations: (
+    "IDE confirmed the end of session"
+)
+01:15:05.199 ConciergeApp[90524:13183874] <XCTWaiter: 0x600000201290, state: XCTWaiterStateSucceeded>: cancelWaiting
+01:15:05.200 ConciergeApp[90524:13183693] <XCTWaiter: 0x600000201290, state: XCTWaiterStateSucceeded> done waiting
+01:15:05.200 ConciergeApp[90524:13183693] <XCTWaiter: 0x600000201290, state: XCTWaiterStateSucceeded> cleaning up IDE confirmed the end of session
+01:15:05.206 testmanagerd[90522:13183794] Test process connection invalidated or interrupted, closing test session <XCTestSession: 0x7fd7ccf0c770>.
+01:15:05.207 testmanagerd[90522:13183794] Closed <XCTestSession: 0x7fd7ccf0c770>, removing from (
+    "<XCTestSession: 0x7fd7ccf0c770>"
+)
+01:15:05.207 testmanagerd[90522:13183794] Tearing down test session <XCTestSession: 0x7fd7ccf0c770>.
+01:15:05.207 testmanagerd[90522:13183794] XCTestSession is responsible for cleaning up its socket from an XCIDESession
+01:15:05.210 testmanagerd[90522:13183794] Considering exiting:
+01:15:05.225 Xcode[87419:13183909] Closing socket 76 to testmanagerd for Sim iPhone 8
+01:15:05.210 testmanagerd[90522:13183794] Session summary: 0 test sessions, 0 sessions with identifiers, 0 unidentified sessions, has control sessions, 0 pending connections
+01:15:05.211 testmanagerd[90522:13183794] Control sessions: (
+    "<XCIDESession: 0x7fd7ccf0a310> (socket 5) created Wednesday, December 13, 2017 at 1:15:03 AM Eastern Standard Time"
+)
+01:15:05.234 Xcode[87419:12965461] Got death notice for pid 90524, removing from SimulatorSessionMap
+01:15:05.247 Xcode[87419:12965461] Launch session LaunchSessionClaim_0x7f7f0aaf9890 relinquised claim on simulator CA119EAA-0987-4E79-ACB7-5519180FE13A
+01:15:05.247 Xcode[87419:12965461] Launch session LaunchSessionClaim_0x7f7f0aaf9890 relinquised claim on simulator CA119EAA-0987-4E79-ACB7-5519180FE13A
+Test Suite 'Selected tests' passed at 2017-12-13 01:15:05.151.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 1.106 (1.116) seconds
+01:15:05.286 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: parseConsoleOutputFromOriginalOutput: called, 0 bytes written out to StandardOutputAndStandardError
+01:15:05.491 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0> finished receiving data from <IDEConsoleAdaptor: 0x7f7f077b0040 'target' stdin: (null) 0 stdout: (null) 0 stderr: (null) 0>
+01:15:05.491 Xcode[87419:12965461] <IDETestOperationCoordinator: 0x7f7f09eeafb0>: _considerFlushingDelegateBlockQueue - nothing to flush
+01:15:05.491 Xcode[87419:12965461] _finishWithError:(null)
