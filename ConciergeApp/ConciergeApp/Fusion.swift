@@ -36,6 +36,8 @@ public class Fusion {
         }
     }
     
+    // Collects arguments to pass along to the URL, and makes HTTP request to yelp API
+    // Finally, triggers a notification with contents of first item in API response
     func goFusion(locationParam: String) {
         let ptvc = PreferencesTableViewController()
         ptvc.correctCaller = true
@@ -107,6 +109,7 @@ public class Fusion {
         }
     }
     
+    // Database call to retrieve radius parameter
     func getRadius(completion: @escaping (String) -> ()) {
         var radiusParam: String = ""
         if let user = Auth.auth().currentUser {

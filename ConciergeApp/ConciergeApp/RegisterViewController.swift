@@ -51,6 +51,7 @@ class RegisterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // Creates the schema for a new user
     func updateDB() {
         print(emailText.text!)
         print(passwordText.text!)
@@ -64,15 +65,4 @@ class RegisterViewController: UIViewController {
         ref.child("users").child(hashedEmail).child("profile").child("radius").setValue(Double(1))
         
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

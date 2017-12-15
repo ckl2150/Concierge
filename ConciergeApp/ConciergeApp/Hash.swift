@@ -9,7 +9,7 @@
 import Foundation
 
 public class Hash {
-    // Hashing functions for database retrieval and storage
+    // Hashing functions to encrypt username/password
     public static func sha256(data : NSData) -> NSData {
         var hash = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
         CC_SHA256(data.bytes, CC_LONG(data.length), &hash)
