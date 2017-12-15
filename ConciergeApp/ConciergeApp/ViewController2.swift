@@ -21,7 +21,7 @@ class ViewController2: UIViewController, CLLocationManagerDelegate, UIImagePicke
     var bgTask = UIBackgroundTaskInvalid
     var lastFiredNotification:NSDate = NSDate()
     var notificationPreference: Double = -1
-    var domain = "https://api.yelp.com/v3/businesses/search?term="
+    var domain = "https://api.yelp.com/v3/businesses/search?term=" // URL to build upon
     var flag: Bool = false
     var myUrl: String = ""
     
@@ -34,6 +34,7 @@ class ViewController2: UIViewController, CLLocationManagerDelegate, UIImagePicke
     @IBOutlet weak var localSpotDistLabel: UILabel!
     @IBOutlet weak var localSpotLabel: UILabel!
     @IBOutlet weak var localSpotPriceLabel: UILabel!
+    
     @IBAction func settingsButton(_ sender: Any) {
         self.performSegue(withIdentifier: "preferencesSegue", sender: nil)
     }
@@ -80,26 +81,11 @@ class ViewController2: UIViewController, CLLocationManagerDelegate, UIImagePicke
         
         learnMoreBut.addTarget(self, action: #selector(self.learnMoreAction(_:)), for: .touchUpInside)
         
+        // Turn on location services. Critical for the app to know when to send notifications
         if CLLocationManager.locationServicesEnabled(){
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.startMonitoringSignificantLocationChanges()
-        }
-
-        Auth.auth().addStateDidChangeListener { (auth, user) in
-            let hashedData: NSData = Hash.sha256(data: user!.email!.data(using: String.Encoding.utf8)! as NSData)
-            let hashedEmail: String = Hash.hexStringFromData(input: Hash.sha256(data: hashedData))
-            self.ref.child("users").child(hashedEmail).child("account").ref.observe( .value, with: { (snapshot) -> Void in
-                if snapshot.exists() {
-                    for s in snapshot.children.allObjects as! [DataSnapshot] {
-                        print(s.key)
-                        if s.key == "userName" {
-                            print(s.value as! String)
-                            self.usernameLabel.text = (s.value as! String)
-                        }
-                    }
-                }
-            })
         }
     }
     
@@ -107,6 +93,7 @@ class ViewController2: UIViewController, CLLocationManagerDelegate, UIImagePicke
         UIApplication.shared.open(URL(string: myUrl )!, options: [:], completionHandler: nil)
     }
     
+    // Pulls the representative photo from a nearby point of interest as returned by the yelp API
     @IBAction func addPic(_ sender: UIButton) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
@@ -146,6 +133,7 @@ class ViewController2: UIViewController, CLLocationManagerDelegate, UIImagePicke
         picker.dismiss(animated: true, completion: nil)
     }
     
+    // Database call to retrieve frequency for notification generation
     func getNotificationFrequency(completion: @escaping ([DataSnapshot]) -> ()) {
         if let user = Auth.auth().currentUser {
             let hashedData: NSData = Hash.sha256(data: user.email!.data(using: String.Encoding.utf8)! as NSData)
